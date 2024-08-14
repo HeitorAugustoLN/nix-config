@@ -1,0 +1,9 @@
+keys:
+  - &hosts:
+    - &Charmander age1fdrzfqn6kztvdwtptu37dn8et8v4gzzhjpfwv3jxjdngrv53a9kq2ku0zm
+
+creation_rules:
+  - path_regex: hosts/common/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *Charmander
