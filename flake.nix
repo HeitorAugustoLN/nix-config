@@ -43,6 +43,12 @@
         home-manager.follows = "home-manager";
       };
     };
+
+    # Firefox user.js
+    betterfox = {
+      url = "github:HeitorAugustoLN/betterfox-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
