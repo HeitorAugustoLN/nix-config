@@ -4,6 +4,14 @@
   ...
 }: {
   programs.plasma.kwin = {
+    effects = {
+      desktopSwitching.animation = "slide";
+      minimization = {
+        animation = "squash";
+      };
+      shakeCursor.enable = true;
+      windowOpenClose.animation = "fade";
+    };
     nightLight = {
       enable = true;
       mode = "times";

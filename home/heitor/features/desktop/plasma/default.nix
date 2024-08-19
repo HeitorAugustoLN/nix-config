@@ -12,10 +12,10 @@
     ./apps/konsole.nix # Terminal
 
     ./kscreenlocker.nix # Screen locker
-    ./kwin.nix # Night light, titlebar, virtual desktops
+    ./kwin.nix # Effects, Night light, titlebar, virtual desktops
     ./panels.nix # Panels
     ./powerdevil.nix # Power management
-    ./theme.nix # Colorschemes, Cursors, Effects, Fonts, Icons, Sounds and Wallpapers.
+    ./theme.nix # Colorschemes, Cursors, Fonts, Icons, Sounds and Wallpaper.
   ];
 
   programs.plasma = {

@@ -22,14 +22,6 @@ in {
   ];
 
   programs.plasma = {
-    kwin.effects = {
-      desktopSwitching.animation = "slide";
-      minimization = {
-        animation = "squash";
-      };
-      shakeCursor.enable = true;
-      windowOpenClose.animation = "fade";
-    };
     fonts = {
       general = {
         family = "Inter";
@@ -73,7 +65,7 @@ in {
       soundTheme = "ocean";
       theme = "default";
       tooltipDelay = 500;
-      wallpaperPictureOfTheDay.provider = "apod";
+      wallpaperPictureOfTheDay.provider = "bing";
     };
   };
 }
