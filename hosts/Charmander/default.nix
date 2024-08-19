@@ -9,6 +9,7 @@
     inputs.hardware.nixosModules.common-pc
     inputs.hardware.nixosModules.common-pc-ssd
 
+    inputs.disko.nixosModules.disko # Needed for disk configuration
     ./disk-configuration.nix
     ./hardware-configuration.nix
 
