@@ -49,6 +49,15 @@
       url = "github:HeitorAugustoLN/betterfox-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Neovim
+    neovim = {
+      url = "github:HeitorAugustoLN/aether";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
   };
 
   outputs = {

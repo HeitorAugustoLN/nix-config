@@ -7,6 +7,7 @@
     ./features/apps/browsers/firefox.nix
     ./features/apps/media/spotify.nix
     ./features/apps/media/stremio.nix
+    ./features/neovim.nix
   ];
 
   programs.plasma.input = {
