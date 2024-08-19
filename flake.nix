@@ -69,6 +69,7 @@
       ];
 
       perSystem = {pkgs, ...}: {
+        devShells = import ./shell.nix {inherit pkgs;};
         formatter = pkgs.alejandra;
       };
     };
