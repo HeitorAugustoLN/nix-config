@@ -4,6 +4,16 @@
     additions = final: _prev: import ../pkgs/all-packages.nix {pkgs = final;};
 
     modifications = final: prev: {
+      # Workaround for https://github.com/antroids/application-title-bar/issues/50
+      application-title-bar = prev.application-title-bar.overrideAttrs {
+        version = "0.6.8";
+        src = prev.fetchFromGitHub {
+          owner = "antroids";
+          repo = "application-title-bar";
+          rev = "v0.6.8";
+          hash = "sha256-pwCmkFEhxz7ZtNZNnIK2cTo+GDlIRIZ3VQ76n6qJ0Ac=";
+        };
+      };
       # Catppuccin theme for SDDM with Where is my sddm theme
       where-is-my-sddm-theme = prev.where-is-my-sddm-theme.override {
         themeConfig.General = {
