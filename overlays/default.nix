@@ -4,14 +4,14 @@
     additions = final: _prev: import ../pkgs/all-packages.nix {pkgs = final;};
 
     modifications = final: prev: {
-      # Workaround for https://github.com/antroids/application-title-bar/issues/50
+      # TODO: Remove this when v0.7.1 gets in upstream nixpkgs
       application-title-bar = prev.application-title-bar.overrideAttrs {
-        version = "0.6.8";
+        version = "0.7.1";
         src = prev.fetchFromGitHub {
           owner = "antroids";
           repo = "application-title-bar";
-          rev = "v0.6.8";
-          hash = "sha256-pwCmkFEhxz7ZtNZNnIK2cTo+GDlIRIZ3VQ76n6qJ0Ac=";
+          rev = "v0.7.1";
+          hash = "sha256-rsbMHh8T3ZLB0u+jccD48EaXKxaGI32uA9KVfkD4GMU=";
         };
       };
       # Catppuccin theme for SDDM with Where is my sddm theme
