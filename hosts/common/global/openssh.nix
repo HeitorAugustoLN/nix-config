@@ -14,6 +14,7 @@ in {
         type = "ed25519";
       }
     ];
+    ports = [1337];
 
     settings = {
       # Harden
