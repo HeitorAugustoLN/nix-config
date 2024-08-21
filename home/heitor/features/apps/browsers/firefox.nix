@@ -10,7 +10,7 @@
 
     betterfox = {
       enable = true;
-      version = "128.0";
+      version = "129.0";
     };
 
     languagePacks = ["pt-BR"];
