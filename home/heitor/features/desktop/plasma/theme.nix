@@ -22,6 +22,51 @@ in {
   ];
 
   programs.plasma = {
+    desktop.widgets = [
+      {
+        digitalClock = {
+          position = {
+            horizontal = 1650;
+            vertical = 40;
+          };
+          size = {
+            width = 225;
+            height = 200;
+          };
+
+          # Digital clock settings
+          calendar = {
+            firstDayOfWeek = "sunday";
+            plugins = [
+              "astronomicalevents"
+              "holidaysevents"
+            ];
+            showWeekNumbers = true;
+          };
+
+          date = {
+            enable = true;
+            format = "longDate";
+            position = "belowTime";
+          };
+
+          time = {
+            format = "24h";
+            showSeconds = "never";
+          };
+
+          timeZone = {
+            alwaysShow = false;
+            changeOnScroll = false;
+            lastSelected = "America/Sao_Paulo";
+            selected = [
+              "America/Sao_Paulo"
+              "UTC"
+            ];
+          };
+        };
+      }
+    ];
     fonts = {
       general = {
         family = "Inter";

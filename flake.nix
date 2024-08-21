@@ -37,7 +37,7 @@
 
     # KDE Plasma and KDE apps configuration
     plasma-manager = {
-      url = "github:nix-community/plasma-manager";
+      url = "github:HeitorAugustoLN/plasma-manager/desktop-widgets-v2";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
