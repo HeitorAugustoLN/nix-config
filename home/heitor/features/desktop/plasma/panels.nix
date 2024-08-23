@@ -131,6 +131,13 @@
                 widgetMargins = 1;
               };
               overrideForMaximized.enable = false;
+              titleReplacements = [
+                {
+                  type = "regexp";
+                  originalTitle = "qemu-.*$";
+                  newTitle = "QEMU";
+                }
+              ];
               windowControlButtons = {
                 auroraeTheme = null;
                 buttonsAnimationSpeed = 100;
