@@ -29,6 +29,7 @@
 
     ../common/optional/stevenblack.nix
     ../common/optional/systemd-boot.nix
+    ../common/optional/virt-manager.nix
   ];
 
   networking.hostName = "Charmander";
