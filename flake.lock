@@ -247,16 +247,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1724364560,
-        "narHash": "sha256-bS8++Ed3PZldrx6lNmDrw4RuAD4fqFYLJ79/JGt8SXQ=",
-        "owner": "HeitorAugustoLN",
+        "lastModified": 1724505813,
+        "narHash": "sha256-FrkfesL05kvgJgcq8x6G/NakRNC3Iq1hrifktssgaZA=",
+        "owner": "nix-community",
         "repo": "plasma-manager",
-        "rev": "88433d53fc238220035c914d55baa8fba6180f30",
+        "rev": "311435f82edf771421f49ef6dca1c39eb34837ac",
         "type": "github"
       },
       "original": {
-        "owner": "HeitorAugustoLN",
-        "ref": "desktop-widgets-v2",
+        "owner": "nix-community",
         "repo": "plasma-manager",
         "type": "github"
       }

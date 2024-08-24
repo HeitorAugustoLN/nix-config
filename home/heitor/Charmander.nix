@@ -8,6 +8,7 @@
     ./features/apps/media/spotify.nix
     ./features/apps/media/stremio.nix
     ./features/neovim.nix
+    ./features/obs-studio.nix
   ];
 
   programs.plasma.input = {
