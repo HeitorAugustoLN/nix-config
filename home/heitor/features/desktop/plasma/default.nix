@@ -8,6 +8,7 @@
   imports = [
     inputs.plasma-manager.homeManagerModules.plasma-manager
 
+    ./apps/ghostwriter.nix # Markdown Editor
     ./apps/kate.nix # Text editor
     ./apps/konsole.nix # Terminal
 
