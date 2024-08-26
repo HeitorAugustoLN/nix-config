@@ -1,9 +1,9 @@
-{
+{config, ...}: {
   programs.plasma.kscreenlocker = {
     appearance = {
       alwaysShowClock = true;
       showMediaControls = false;
-      wallpaperPictureOfTheDay.provider = "apod";
+      wallpaper = config.programs.plasma.workspace.wallpaper;
     };
 
     autoLock = true;

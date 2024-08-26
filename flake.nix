@@ -58,6 +58,11 @@
         flake-parts.follows = "flake-parts";
       };
     };
+
+    wallpapers = {
+      url = "github:HeitorAugustoLN/wallpapers";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

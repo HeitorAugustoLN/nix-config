@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -110,7 +111,7 @@ in {
       soundTheme = "ocean";
       theme = "default";
       tooltipDelay = 500;
-      wallpaperPictureOfTheDay.provider = "bing";
+      wallpaper = inputs.wallpapers.desktop.by-theme.catppuccin.mocha.digital-art.eclipse;
     };
   };
 }
