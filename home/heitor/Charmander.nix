@@ -2,6 +2,8 @@
   imports = [
     ./global
 
+    ./features/cli/direnv.nix
+
     ./features/desktop/plasma
     ./features/git.nix
     ./features/apps/browsers/firefox.nix

@@ -274,7 +274,8 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nur": "nur",
         "plasma-manager": "plasma-manager",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "wallpapers": "wallpapers"
       }
     },
     "sops-nix": {
@@ -297,6 +298,26 @@
       "original": {
         "owner": "Mic92",
         "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "wallpapers": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1724705700,
+        "narHash": "sha256-tjfl2mdj+5LM9ZtXvQBQvTObAlPbu/rysRgC69a+EUM=",
+        "owner": "HeitorAugustoLN",
+        "repo": "wallpapers",
+        "rev": "4e4a90bf0c971473558853516647c9a3fcfc0fee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HeitorAugustoLN",
+        "repo": "wallpapers",
         "type": "github"
       }
     }
