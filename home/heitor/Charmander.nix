@@ -2,7 +2,7 @@
   imports = [
     ./global
 
-    ./features/cli/direnv.nix
+    ./features/cli
 
     ./features/desktop/plasma
     ./features/git.nix
