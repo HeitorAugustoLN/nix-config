@@ -122,7 +122,7 @@
                 filterByVirtualDesktop = true;
               };
               layout = {
-                elements = ["windowTitle"];
+                elements = [ "windowTitle" ];
                 fillFreeSpace = false;
                 horizontalAlignment = "left";
                 showDisabledElements = "deactivated";

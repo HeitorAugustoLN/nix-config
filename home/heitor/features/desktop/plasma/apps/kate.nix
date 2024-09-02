@@ -2,10 +2,12 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   fontFamily = config.programs.plasma.fonts.fixedWidth.family;
   catppuccinFlavor = config.catppuccin.flavor;
-in {
+in
+{
   programs.kate = {
     enable = true;
     editor = {
@@ -32,12 +34,17 @@ in {
       };
       inputMode = "vi";
       tabWidth = 2;
-      theme.name = let
-        capitalizeWord = word: let
-          firstLetter = builtins.substring 0 1 word;
-          rest = builtins.substring 1 (builtins.stringLength word - 1) word;
-        in "${lib.toUpper firstLetter}${rest}";
-      in "Catppuccin ${capitalizeWord catppuccinFlavor}";
+      theme.name =
+        let
+          capitalizeWord =
+            word:
+            let
+              firstLetter = builtins.substring 0 1 word;
+              rest = builtins.substring 1 (builtins.stringLength word - 1) word;
+            in
+            "${lib.toUpper firstLetter}${rest}";
+        in
+        "Catppuccin ${capitalizeWord catppuccinFlavor}";
     };
   };
 }

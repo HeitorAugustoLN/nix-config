@@ -1,7 +1,8 @@
-{inputs, ...}: {
+{ inputs, ... }:
+{
   flake.overlays = {
     # My custom packages
-    additions = final: _prev: import ../pkgs/all-packages.nix {pkgs = final;};
+    additions = final: _prev: import ../pkgs/all-packages.nix { pkgs = final; };
 
     modifications = final: prev: {
       # TODO: Remove this when v0.7.1 gets in upstream nixpkgs

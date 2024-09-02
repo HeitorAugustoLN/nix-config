@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   programs.plasma.kscreenlocker = {
     appearance = {
       alwaysShowClock = true;

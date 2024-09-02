@@ -3,9 +3,11 @@
   inputs,
   pkgs,
   ...
-}: let
+}:
+let
   inherit (pkgs.stdenv.hostPlatform) system;
   myNeovim = inputs.neovim.packages.${system}.default;
-in {
-  home.packages = [myNeovim];
+in
+{
+  home.packages = [ myNeovim ];
 }

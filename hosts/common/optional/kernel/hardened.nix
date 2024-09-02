@@ -1,1 +1,4 @@
-{pkgs, ...}: {boot.kernelPackages = pkgs.linuxPackages_hardened;}
+{ pkgs, ... }:
+{
+  boot.kernelPackages = pkgs.linuxPackages_hardened;
+}

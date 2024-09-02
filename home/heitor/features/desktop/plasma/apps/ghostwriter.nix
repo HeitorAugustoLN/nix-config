@@ -3,13 +3,15 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   codeFont = config.programs.plasma.fonts.fixedWidth.family;
   textFont = config.programs.plasma.fonts.general.family;
 
   catppuccinAccent = config.catppuccin.accent;
   catppuccinFlavor = config.catppuccin.flavor;
-in {
+in
+{
   programs.ghostwriter = {
     enable = true;
     locale = "pt_BR";
@@ -95,18 +97,23 @@ in {
 
     theme = {
       customThemes = {
-        Catppuccin = let
-          theme = pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "ghostwriter";
-            rev = "84830fbd4bff8805ccf91ea35cbd9d8b717a3c43";
-            hash = "sha256-0Laz7n7SEzK42AVlVpRBX3luIXfASBM4wfQlSnkuGZE=";
-          };
-          capitalizeWord = word: let
-            firstLetter = builtins.substring 0 1 word;
-            rest = builtins.substring 1 (builtins.stringLength word - 1) word;
-          in "${lib.toUpper firstLetter}${rest}";
-        in "${theme}/colours/Catppuccin-Latte-${capitalizeWord catppuccinFlavor}-${capitalizeWord catppuccinAccent}.json";
+        Catppuccin =
+          let
+            theme = pkgs.fetchFromGitHub {
+              owner = "catppuccin";
+              repo = "ghostwriter";
+              rev = "84830fbd4bff8805ccf91ea35cbd9d8b717a3c43";
+              hash = "sha256-0Laz7n7SEzK42AVlVpRBX3luIXfASBM4wfQlSnkuGZE=";
+            };
+            capitalizeWord =
+              word:
+              let
+                firstLetter = builtins.substring 0 1 word;
+                rest = builtins.substring 1 (builtins.stringLength word - 1) word;
+              in
+              "${lib.toUpper firstLetter}${rest}";
+          in
+          "${theme}/colours/Catppuccin-Latte-${capitalizeWord catppuccinFlavor}-${capitalizeWord catppuccinAccent}.json";
       };
       name = "Catppuccin";
     };

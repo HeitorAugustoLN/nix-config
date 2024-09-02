@@ -2,8 +2,9 @@
   inputs,
   pkgs,
   ...
-}: {
-  imports = [inputs.betterfox.homeManagerModules.betterfox];
+}:
+{
+  imports = [ inputs.betterfox.homeManagerModules.betterfox ];
 
   programs.firefox = {
     enable = true;
@@ -13,8 +14,8 @@
       version = "129.0";
     };
 
-    languagePacks = ["pt-BR"];
-    nativeMessagingHosts = with pkgs; [plasma-browser-integration];
+    languagePacks = [ "pt-BR" ];
+    nativeMessagingHosts = with pkgs; [ plasma-browser-integration ];
 
     profiles.Heitor = {
       isDefault = true;
@@ -65,16 +66,18 @@
         default = "DuckDuckGo";
         privateDefault = "DuckDuckGo";
 
-        engines = let
-          mkEngine = alias: template: {
-            definedAliases = ["@${alias}"];
-            urls = [{inherit template;}];
+        engines =
+          let
+            mkEngine = alias: template: {
+              definedAliases = [ "@${alias}" ];
+              urls = [ { inherit template; } ];
+            };
+          in
+          {
+            "DuckDuckGo" = mkEngine "duckduckgo" "https://duckduckgo.com/?q={searchTerms}";
+            "Google" = mkEngine "google" "https://www.google.com/search?q={searchTerms}";
+            "Bing".metaData.hidden = true;
           };
-        in {
-          "DuckDuckGo" = mkEngine "duckduckgo" "https://duckduckgo.com/?q={searchTerms}";
-          "Google" = mkEngine "google" "https://www.google.com/search?q={searchTerms}";
-          "Bing".metaData.hidden = true;
-        };
       };
     };
   };

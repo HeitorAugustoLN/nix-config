@@ -3,9 +3,11 @@
   inputs,
   lib,
   ...
-}: let
+}:
+let
   hosts = builtins.attrNames inputs.self.nixosConfigurations;
-in {
+in
+{
   services.openssh = {
     enable = true;
     hostKeys = [
@@ -14,7 +16,7 @@ in {
         type = "ed25519";
       }
     ];
-    ports = [1337];
+    ports = [ 1337 ];
 
     settings = {
       # Harden
@@ -30,7 +32,7 @@ in {
     knownHosts = lib.genAttrs hosts (hostname: {
       publicKeyFile = ../../${hostname}/ssh_host_ed25519_key.pub;
       extraHostNames =
-        []
+        [ ]
         # Alias for localhost if it's the same host
         ++ (lib.optional (hostname == config.networking.hostName) "localhost");
     });

@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   time = {
     hardwareClockInLocalTime = lib.mkDefault true;
     timeZone = lib.mkDefault "America/Sao_Paulo";

@@ -4,18 +4,20 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   catppuccinAccent = config.catppuccin.accent;
   catppuccinFlavor = config.catppuccin.flavor;
-in {
+in
+{
   home.packages = with pkgs; [
     (catppuccin-papirus-folders.override {
       accent = catppuccinAccent;
       flavor = catppuccinFlavor;
     })
     (catppuccin-kde.override {
-      accents = ["${catppuccinAccent}"];
-      flavour = ["${catppuccinFlavor}"];
+      accents = [ "${catppuccinAccent}" ];
+      flavour = [ "${catppuccinFlavor}" ];
     })
     inter
     bibata-cursors
@@ -96,12 +98,17 @@ in {
     };
     workspace = {
       clickItemTo = "open";
-      colorScheme = let
-        capitalizeWord = word: let
-          firstLetter = builtins.substring 0 1 word;
-          rest = builtins.substring 1 (builtins.stringLength word - 1) word;
-        in "${lib.toUpper firstLetter}${rest}";
-      in "Catppuccin${capitalizeWord catppuccinFlavor}${capitalizeWord catppuccinAccent}";
+      colorScheme =
+        let
+          capitalizeWord =
+            word:
+            let
+              firstLetter = builtins.substring 0 1 word;
+              rest = builtins.substring 1 (builtins.stringLength word - 1) word;
+            in
+            "${lib.toUpper firstLetter}${rest}";
+        in
+        "Catppuccin${capitalizeWord catppuccinFlavor}${capitalizeWord catppuccinAccent}";
       cursor = {
         theme = "Bibata-Modern-Ice";
         size = 24;

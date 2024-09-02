@@ -1,5 +1,6 @@
 # This will be moved somewhere else soon
-{osConfig, ...}: {
+{ osConfig, ... }:
+{
   programs.git = {
     enable = true;
     extraConfig = {

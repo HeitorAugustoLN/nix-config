@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   # Some security tweaks were borrowed from @hlissner
   boot = {
     kernel.sysctl = {
@@ -41,7 +42,7 @@
       "net.ipv4.tcp_congestion_control" = "bbr";
       "net.core.default_qdisc" = "cake";
     };
-    kernelModules = ["tcp_bbr"];
+    kernelModules = [ "tcp_bbr" ];
 
     # Fix a security hole in place for backwards compatibility. See desc in
     # nixpkgs/nixos/modules/system/boot/loader/systemd-boot/systemd-boot.nix

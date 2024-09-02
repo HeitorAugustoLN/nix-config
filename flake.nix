@@ -68,12 +68,13 @@
     };
   };
 
-  outputs = {
-    self,
-    flake-parts,
-    ...
-  } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs =
+    {
+      self,
+      flake-parts,
+      ...
+    }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
       ];
@@ -85,9 +86,11 @@
         ./pkgs
       ];
 
-      perSystem = {pkgs, ...}: {
-        devShells = import ./shell.nix {inherit pkgs;};
-        formatter = pkgs.alejandra;
-      };
+      perSystem =
+        { pkgs, ... }:
+        {
+          devShells = import ./shell.nix { inherit pkgs; };
+          formatter = pkgs.nixfmt-rfc-style;
+        };
     };
 }

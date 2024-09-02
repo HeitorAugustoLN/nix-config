@@ -3,12 +3,11 @@
   inputs,
   lib,
   ...
-}: {
-  imports =
-    [
-      ./catppuccin.nix
-    ]
-    ++ (builtins.attrValues inputs.self.homeManagerModules);
+}:
+{
+  imports = [
+    ./catppuccin.nix
+  ] ++ (builtins.attrValues inputs.self.homeManagerModules);
 
   home = {
     username = lib.mkDefault "heitor";

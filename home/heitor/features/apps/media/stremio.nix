@@ -1,1 +1,4 @@
-{pkgs, ...}: {home.packages = with pkgs; [stremio];}
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [ stremio ];
+}

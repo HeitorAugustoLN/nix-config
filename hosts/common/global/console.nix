@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   console = {
     enable = true;
     catppuccin.enable = true;
