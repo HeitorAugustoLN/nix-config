@@ -3,7 +3,10 @@
 
   inputs = {
     # Flake framework
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
 
     # Declarative disk partitioning
     disko = {
@@ -37,7 +40,7 @@
 
     # KDE Plasma and KDE apps configuration
     plasma-manager = {
-      url = "github:HeitorAugustoLN/plasma-manager/ghostwriter";
+      url = "github:nix-community/plasma-manager";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
@@ -52,7 +55,7 @@
 
     # Neovim
     neovim = {
-      url = "github:HeitorAugustoLN/aether";
+      url = "github:HeitorAugustoLN/Aria";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

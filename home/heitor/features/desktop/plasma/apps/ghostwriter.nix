@@ -73,7 +73,7 @@ in {
     spelling = {
       autoDetectLanguage = true;
       checkerEnabledByDefault = true;
-      ignoreUppercase =false;
+      ignoreUppercase = false;
       ignoredWords = [
         "Amarok"
         "KAddressBook"
