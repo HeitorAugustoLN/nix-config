@@ -17,6 +17,7 @@
     ./kscreenlocker.nix # Screen locker
     ./kwin.nix # Effects, Night light, titlebar, virtual desktops
     ./panels.nix # Panels
+    ./polonium.nix # Tiling
     ./powerdevil.nix # Power management
     ./theme.nix # Colorschemes, Cursors, Fonts, Icons, Sounds and Wallpaper.
   ];
