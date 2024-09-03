@@ -6,6 +6,7 @@
 
     ./features/desktop/plasma
     ./features/git.nix
+    ./features/gh.nix
     ./features/apps/browsers/firefox.nix
     ./features/apps/media/spotify.nix
     ./features/apps/media/stremio.nix
