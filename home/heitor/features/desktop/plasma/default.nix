@@ -13,6 +13,7 @@
     ./apps/kate.nix # Text editor
     ./apps/konsole.nix # Terminal
 
+    ./krunner.nix # KRunner
     ./kscreenlocker.nix # Screen locker
     ./kwin.nix # Effects, Night light, titlebar, virtual desktops
     ./panels.nix # Panels
