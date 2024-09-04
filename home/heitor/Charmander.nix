@@ -10,6 +10,7 @@
     ./features/apps/browsers/firefox.nix
     ./features/apps/media/spotify.nix
     ./features/apps/media/stremio.nix
+    ./features/apps/office/libreoffice.nix
     ./features/neovim.nix
     ./features/obs-studio.nix
   ];
