@@ -5,14 +5,14 @@
     additions = final: _prev: import ../pkgs/all-packages.nix { pkgs = final; };
 
     modifications = final: prev: {
-      # TODO: Remove this when v0.7.1 gets in upstream nixpkgs
-      application-title-bar = prev.application-title-bar.overrideAttrs {
-        version = "0.7.1";
+      # TODO: Remove this when https://github.com/NixOS/nixpkgs/pull/339732 gets on nixos-unstable
+      plasmusic-toolbar = prev.plasmusic-toolbar.overrideAttrs {
+        version = "1.6.0";
         src = prev.fetchFromGitHub {
-          owner = "antroids";
-          repo = "application-title-bar";
-          rev = "v0.7.1";
-          hash = "sha256-rsbMHh8T3ZLB0u+jccD48EaXKxaGI32uA9KVfkD4GMU=";
+          owner = "ccatterina";
+          repo = "plasmusic-toolbar";
+          rev = "v1.6.0";
+          hash = "sha256-tZ2xcoGZp2GWoKd4XjO2K4he3tKBHgxi0PdqY+5ULn0=";
         };
       };
       # Catppuccin theme for SDDM with Where is my sddm theme
