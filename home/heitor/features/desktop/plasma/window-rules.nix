@@ -1,4 +1,7 @@
 { config, ... }:
+let
+  desktops = config.programs.plasma.configFile."kwinrc".Desktops;
+in
 {
   programs.plasma.configFile."kwinrc".Desktops = {
     Id_1 = "8cc7e7ed-f92f-40c2-9ae2-a4aa20b39960";
@@ -18,7 +21,7 @@
       apply = {
         desktops = {
           apply = "initially";
-          value = config.plasma.configFile."kwinrc".Desktops.Id_1.value;
+          value = desktops.Id_1;
         };
         maximizehoriz = {
           apply = "initially";
