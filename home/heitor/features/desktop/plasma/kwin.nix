@@ -46,7 +46,7 @@
           rows = config.programs.plasma.kwin.virtualDesktops.rows;
         in
         map (n: "Workspace ${toString n}") (lib.range 1 (number * rows));
-      number = 4;
+      number = 10;
       rows = 1;
     };
   };

@@ -36,11 +36,11 @@
     };
 
     # System and user theme
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.url = "github:HeitorAugustoLN/catppuccin-nix/plasma-manager-konsole";
 
     # KDE Plasma and KDE apps configuration
     plasma-manager = {
-      url = "github:nix-community/plasma-manager";
+      url = "github:HeitorAugustoLn/plasma-manager/tiling";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";

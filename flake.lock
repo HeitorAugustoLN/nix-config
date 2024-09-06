@@ -22,16 +22,17 @@
     },
     "catppuccin": {
       "locked": {
-        "lastModified": 1724469296,
-        "narHash": "sha256-p3R4LUNk6gC+fTKRUm9ByXaoRIocnQMwVuJSIxECQ8o=",
-        "owner": "catppuccin",
-        "repo": "nix",
-        "rev": "874e668ddaf3687e8d38ccd0188a641ffefe1cfb",
+        "lastModified": 1725579082,
+        "narHash": "sha256-YX0eYyGWC/UA9a0pey0NOzXExUTrT7TXhNYqdVK3gpc=",
+        "owner": "HeitorAugustoLN",
+        "repo": "catppuccin-nix",
+        "rev": "97224ab1274f29fe12f8d8767829d48003373857",
         "type": "github"
       },
       "original": {
-        "owner": "catppuccin",
-        "repo": "nix",
+        "owner": "HeitorAugustoLN",
+        "ref": "plasma-manager-konsole",
+        "repo": "catppuccin-nix",
         "type": "github"
       }
     },
@@ -238,15 +239,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1725327224,
-        "narHash": "sha256-+cMfiE+zigDuChOFlhUH3yN7Yll9hr1LRBHsO09pqjY=",
-        "owner": "nix-community",
+        "lastModified": 1725575585,
+        "narHash": "sha256-1e9zB0dMRwdAbhxVATlL25rExMDh4gZ/3AXdkpU8408=",
+        "owner": "HeitorAugustoLn",
         "repo": "plasma-manager",
-        "rev": "3f1589c38428bd8121fd5deebd86ce4108b29d6e",
+        "rev": "d70bc4ddb8a6d6f3b777df85e713f9c6d6b4f5ca",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "HeitorAugustoLn",
+        "ref": "tiling",
         "repo": "plasma-manager",
         "type": "github"
       }

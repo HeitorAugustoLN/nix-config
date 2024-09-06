@@ -15,7 +15,10 @@
     ./kwin.nix # Effects, Night light, titlebar, virtual desktops
     ./panels.nix # Panels
     ./powerdevil.nix # Power management
+    ./shortcuts.nix # Shortcuts
     ./theme.nix # Colorschemes, Cursors, Fonts, Icons, Sounds and Wallpaper.
+    ./tiling.nix # Tiling
+    ./window-rules.nix # Window rules
   ];
 
   programs.plasma = {
