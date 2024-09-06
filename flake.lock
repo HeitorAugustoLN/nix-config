@@ -239,16 +239,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1725575585,
+        "lastModified": 1725575977,
         "narHash": "sha256-1e9zB0dMRwdAbhxVATlL25rExMDh4gZ/3AXdkpU8408=",
-        "owner": "HeitorAugustoLn",
+        "owner": "nix-community",
         "repo": "plasma-manager",
-        "rev": "d70bc4ddb8a6d6f3b777df85e713f9c6d6b4f5ca",
+        "rev": "b82b9ba85c156a5e7f865cc94ed2a4df20cbbf39",
         "type": "github"
       },
       "original": {
-        "owner": "HeitorAugustoLn",
-        "ref": "tiling",
+        "owner": "nix-community",
         "repo": "plasma-manager",
         "type": "github"
       }

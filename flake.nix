@@ -40,7 +40,7 @@
 
     # KDE Plasma and KDE apps configuration
     plasma-manager = {
-      url = "github:HeitorAugustoLn/plasma-manager/tiling";
+      url = "github:nix-community/plasma-manager";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
