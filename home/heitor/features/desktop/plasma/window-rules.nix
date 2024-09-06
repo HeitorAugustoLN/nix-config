@@ -21,7 +21,7 @@ in
       apply = {
         desktops = {
           apply = "initially";
-          value = desktops.Id_1;
+          value = desktops.Id_1.value;
         };
         maximizehoriz = {
           apply = "initially";
