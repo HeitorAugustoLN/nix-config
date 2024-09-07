@@ -1,4 +1,8 @@
-{ inputs, ... }:
+{ inputs, osConfig, ... }:
+let
+  accent = osConfig.catppuccin.accent;
+  flavor = osConfig.catppuccin.flavor;
+in
 {
   imports = [
     inputs.catppuccin.homeManagerModules.catppuccin
@@ -6,7 +10,9 @@
   ];
 
   catppuccin = {
-    accent = "mauve";
-    flavor = "mocha";
+    inherit accent flavor;
+    plasma = {
+      inherit accent flavor;
+    };
   };
 }

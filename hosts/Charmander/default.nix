@@ -28,6 +28,7 @@
     ../common/optional/gaming/gamescope.nix
     ../common/optional/gaming/steam.nix
 
+    ../common/optional/piper.nix
     ../common/optional/stevenblack.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/virt-manager.nix
