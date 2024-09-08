@@ -36,7 +36,7 @@
     };
 
     # System and user theme
-    catppuccin.url = "github:HeitorAugustoLN/catppuccin-nix/plasma-manager-konsole";
+    catppuccin.url = "github:catppuccin/nix";
 
     # KDE Plasma and KDE apps configuration
     plasma-manager = {
@@ -69,8 +69,8 @@
   };
 
   outputs =
-    { flake-parts, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } {
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
       ];

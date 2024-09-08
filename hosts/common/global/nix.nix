@@ -1,8 +1,4 @@
-{
-  inputs,
-  lib,
-  ...
-}:
+{ inputs, lib, ... }:
 let
   flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
 in
@@ -32,7 +28,9 @@ in
   };
 
   nixpkgs = {
-    overlays = builtins.attrValues inputs.self.overlays;
+    overlays = [
+      inputs.nur.overlay
+    ] ++ (builtins.attrValues inputs.self.overlays);
     config = {
       allowUnfree = true;
     };

@@ -1,9 +1,5 @@
 # TODO: Move this to a better place
-{
-  inputs,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 let
   inherit (pkgs.stdenv.hostPlatform) system;
   myNeovim = inputs.neovim.packages.${system}.default;

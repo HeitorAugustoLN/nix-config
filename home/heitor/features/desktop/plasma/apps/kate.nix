@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 let
   fontFamily = config.programs.plasma.fonts.fixedWidth.family;
   catppuccinFlavor = config.catppuccin.flavor;

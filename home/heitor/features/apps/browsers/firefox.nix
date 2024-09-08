@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 {
   imports = [ inputs.betterfox.homeManagerModules.betterfox ];
 
