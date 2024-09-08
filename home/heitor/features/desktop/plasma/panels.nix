@@ -161,7 +161,7 @@
             };
           }
           {
-            appmenu = {
+            appMenu = {
               compactView = false;
             };
           }
