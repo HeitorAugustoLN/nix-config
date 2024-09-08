@@ -238,11 +238,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1725781317,
-        "narHash": "sha256-q9oast83PitfKAMbSbBsSkAPyl0U4l620pwmUQl7+wg=",
+        "lastModified": 1725834923,
+        "narHash": "sha256-o57NjRzrSj4CCm5kpedjjFM9XmSbpKTX4BTrYMAlplM=",
         "owner": "magnouvean",
         "repo": "plasma-manager",
-        "rev": "94bcb0c08941ea23a0062de76631e95d918fe07a",
+        "rev": "f2b2886d951ff8b0c66b65d92ef89dc1f81d48a2",
         "type": "github"
       },
       "original": {
