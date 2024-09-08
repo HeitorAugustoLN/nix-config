@@ -1,4 +1,6 @@
-{
+{pkgs, ... } :{
+  home.packages = with pkgs; [kara];
+
   programs.plasma = {
     configFile."plasma_calendar_astronomicalevents".General = {
       showLunarPhase = true;
@@ -131,13 +133,6 @@
                 widgetMargins = 1;
               };
               overrideForMaximized.enable = false;
-              titleReplacements = [
-                {
-                  type = "regexp";
-                  originalTitle = "qemu-.*$";
-                  newTitle = "QEMU";
-                }
-              ];
               windowControlButtons = {
                 auroraeTheme = null;
                 buttonsAnimationSpeed = 100;
@@ -166,14 +161,21 @@
             };
           }
           {
-            name = "org.kde.plasma.appmenu";
-            config.Appearance.compactView = false;
+            appmenu = {
+              compactView = false;
+            };
           }
           {
-            name = "org.kde.plasma.panelspacer";
-            config.General = {
+            panelSpacer = {
               expanding = true;
-              lenght = -1;
+            };
+          }
+          {
+            name = "org.dhruv8sh.kara";
+            config = {
+              general = {
+                type = 0;
+              };
             };
           }
           {

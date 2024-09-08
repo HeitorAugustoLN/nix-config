@@ -3,5 +3,5 @@
   ...
 }:
 {
-  # example = pkgs.callPackage ./example {};
+  kara = pkgs.callPackage ./kara { };
 }
