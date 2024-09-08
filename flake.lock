@@ -238,15 +238,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1725826908,
-        "narHash": "sha256-OFykXcFDqDEa9QxAlfoDHvaz4P+eLIx1HKA6lzQVP2c=",
-        "owner": "nix-community",
+        "lastModified": 1725781317,
+        "narHash": "sha256-q9oast83PitfKAMbSbBsSkAPyl0U4l620pwmUQl7+wg=",
+        "owner": "magnouvean",
         "repo": "plasma-manager",
-        "rev": "ab213b4b6a9abf46516fbd6eecdd2c936fe98155",
+        "rev": "94bcb0c08941ea23a0062de76631e95d918fe07a",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "magnouvean",
+        "ref": "desktopscripts-lastrun-reset",
         "repo": "plasma-manager",
         "type": "github"
       }

@@ -40,7 +40,7 @@
 
     # KDE Plasma and KDE apps configuration
     plasma-manager = {
-      url = "github:nix-community/plasma-manager";
+      url = "github:magnouvean/plasma-manager/desktopscripts-lastrun-reset";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
