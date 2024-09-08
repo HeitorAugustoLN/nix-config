@@ -180,6 +180,11 @@
             };
           }
           {
+            panelSpacer = {
+              expanding = true;
+            };
+          }
+          {
             systemTray = {
               icons = {
                 scaleToFit = true;
