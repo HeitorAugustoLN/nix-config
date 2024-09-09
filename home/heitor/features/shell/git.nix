@@ -14,7 +14,7 @@
         defaultBranch = "main";
       };
       user = {
-        signingkey = "${../../../hosts/${osConfig.networking.hostName}/ssh_host_ed25519_key.pub}";
+        signingkey = "${../../../../hosts/${osConfig.networking.hostName}/ssh_host_ed25519_key.pub}";
       };
     };
     userEmail = "IAm.HeitorALN@proton.me";
