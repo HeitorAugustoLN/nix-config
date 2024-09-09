@@ -14,7 +14,6 @@
     ./shortcuts.nix # Shortcuts
     ./theme.nix # Colorschemes, Cursors, Fonts, Icons, Sounds and Wallpaper.
     ./tiling.nix # Tiling
-    ./window-rules.nix # Window rules
   ];
 
   programs.plasma = {

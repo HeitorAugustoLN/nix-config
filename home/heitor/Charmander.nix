@@ -2,17 +2,25 @@
   imports = [
     ./global
 
-    ./features/cli
-
-    ./features/desktop/plasma
-    ./features/git.nix
-    ./features/gh.nix
     ./features/apps/browsers/firefox.nix
+
+    ./features/apps/editors/neovim.nix
+
+    ./features/apps/media/kdenlive.nix
+    ./features/apps/media/obs-studio.nix
     ./features/apps/media/spotify.nix
     ./features/apps/media/stremio.nix
-    ./features/apps/office/libreoffice.nix
-    ./features/neovim.nix
-    ./features/obs-studio.nix
+
+    ./features/apps/productivity/libreoffice.nix
+    ./features/apps/productivity/obsidian.nix
+
+    ./features/shell
+
+    ./features/desktop/plasma
+
+    ./features/gaming/heroic.nix
+    ./features/gaming/mangohud.nix
+    ./features/gaming/minecraft.nix
   ];
 
   programs.plasma.input = {
