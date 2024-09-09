@@ -31,8 +31,10 @@
     # Secrets management
     sops-nix = {
       url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-stable.follows = "nixpkgs";
+      };
     };
 
     # System and user theme
@@ -40,7 +42,7 @@
 
     # KDE Plasma and KDE apps configuration
     plasma-manager = {
-      url = "github:magnouvean/plasma-manager/desktopscripts-lastrun-reset";
+      url = "github:nix-community/plasma-manager";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
