@@ -14,6 +14,10 @@ in
       ];
       hashedPasswordFile = config.sops.secrets.heitor-password.path;
       isNormalUser = true;
+      openssh.authorizedKeys.keys = [
+        # Venusaur SSH Key
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWo7o4Y5yRnFf5tyqEpWHB+GLqRx9dyNoyY7i5XOn+t IAm.HeitorALN@proton.me"
+      ];
       shell = pkgs.fish;
     };
   };
