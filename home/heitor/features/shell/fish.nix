@@ -2,6 +2,7 @@
   programs.fish = {
     enable = true;
     catppuccin.enable = true;
+    preferAbbrs = true;
 
     functions = {
       fish_greeting = ""; # Disable fish greeting
