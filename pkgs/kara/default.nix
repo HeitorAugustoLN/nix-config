@@ -8,13 +8,13 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "kara";
-  version = "unstable";
+  version = "0.7";
 
   src = fetchFromGitHub {
     owner = "dhruv8sh";
     repo = "kara";
-    rev = "main";
-    hash = "sha256-wyDomHlDMGPCaDfPggzP64YOMfx3/KF0e/YOM4wbqyQ=";
+    rev = "refs/tags/v${finalAttrs.version}";
+    hash = "sha256-hO7Eo+jX7GhEbv6bjILjuvGK15INRWfKdxxFhRhyYn4=";
   };
 
   installPhase = ''
