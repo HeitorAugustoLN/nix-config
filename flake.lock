@@ -121,11 +121,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1726353163,
-        "narHash": "sha256-flwYfisT6Jqb695OuZC/VyWE1CYNLpL5SHsHOS8lLUY=",
+        "lastModified": 1726353365,
+        "narHash": "sha256-mdS0Kng1k0unM6mliXM49zPapksu7vlmtzL4KNcTVoI=",
         "owner": "HeitorAugustoLN",
         "repo": "Aria",
-        "rev": "2427ec32ca5aee7f382ab2d3b1ae2d02d5b0a874",
+        "rev": "cb17bbbca66f8b4047542d154da33b958ad2b916",
         "type": "github"
       },
       "original": {
