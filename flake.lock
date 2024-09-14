@@ -97,16 +97,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1725987444,
-        "narHash": "sha256-rI7RoQDbkfwKVxus7FgX5VRJF3dRZ9JYkHbsynl+JLo=",
-        "owner": "HeitorAugustoLN",
+        "lastModified": 1726308872,
+        "narHash": "sha256-d4vwO5N4RsLnCY7k5tY9xbdYDWQsY3RDMeUoIa4ms2A=",
+        "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1df19138530dda328b247c2367b9be1261079cac",
+        "rev": "6c1a461a444e6ccb3f3e42bb627b510c3a722a57",
         "type": "github"
       },
       "original": {
-        "owner": "HeitorAugustoLN",
-        "ref": "eza-fish-abbrs",
+        "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
       }

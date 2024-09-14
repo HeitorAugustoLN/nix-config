@@ -24,7 +24,7 @@
 
     # User-specific configuration
     home-manager = {
-      url = "github:HeitorAugustoLN/home-manager/eza-fish-abbrs";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
