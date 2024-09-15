@@ -41,6 +41,9 @@
         # Enable DRM by default
         "browser.eme.ui.enabled" = true;
         "media.eme.enabled" = true;
+
+        # Automatically enable extensions
+        "extensions.autoDisableScopes" = 0;
       };
 
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
