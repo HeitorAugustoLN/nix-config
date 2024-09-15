@@ -175,7 +175,13 @@
             name = "org.dhruv8sh.kara";
             config = {
               general = {
+                animationDuration = 200;
+                spacing = 3;
                 type = 0;
+              };
+              type1 = {
+                t1activeWidth = 30;
+                t1radius = 1;
               };
             };
           }
