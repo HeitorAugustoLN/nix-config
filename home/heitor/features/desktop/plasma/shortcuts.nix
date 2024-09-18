@@ -73,6 +73,8 @@ in
         "Switch Window Right" = "Alt+L";
         "Switch Window Up" = "Alt+K";
 
+        "Window Move Center" = "Meta+Shift+C";
+
         "Window One Desktop Down" = "Ctrl+Shift+Alt+J";
         "Window One Desktop to the Left" = "Ctrl+Shift+Alt+H";
         "Window One Desktop to the Right" = "Ctrl+Shift+Alt+L";
