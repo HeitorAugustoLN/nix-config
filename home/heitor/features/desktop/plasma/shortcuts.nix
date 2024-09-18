@@ -78,6 +78,11 @@ in
         "Window One Desktop to the Right" = "Ctrl+Shift+Alt+L";
         "Window One Desktop Up" = "Ctrl+Shift+Alt+K";
 
+        "Window Quick Tile Bottom" = "Alt+Shift+J";
+        "Window Quick Tile Left" = "Alt+Shift+H";
+        "Window Quick Tile Right" = "Alt+Shift+L";
+        "Window Quick Tile Top" = "Alt+Shift+K";
+
         "Window to Next Screen" = "Meta+Shift+Alt+L";
         "Window to Previous Screen" = "Meta+Shift+Alt+H";
       };
