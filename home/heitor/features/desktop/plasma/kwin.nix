@@ -3,9 +3,7 @@
   programs.plasma.kwin = {
     effects = {
       desktopSwitching.animation = "slide";
-      minimization = {
-        animation = "squash";
-      };
+      minimization.animation = "squash";
       shakeCursor.enable = true;
       windowOpenClose.animation = "fade";
     };
@@ -13,14 +11,14 @@
       enable = true;
       mode = "times";
       temperature = {
-        day = 6500;
+        day = 5000;
         night = 1900;
       };
       time = {
-        evening = "19:00";
-        morning = "08:00";
+        evening = "18:30";
+        morning = "06:30";
       };
-      transitionTime = 300;
+      transitionTime = 90;
     };
 
     titlebarButtons = {
@@ -41,7 +39,7 @@
           number = config.programs.plasma.kwin.virtualDesktops.number;
           rows = config.programs.plasma.kwin.virtualDesktops.rows;
         in
-        map (n: "Workspace ${toString n}") (lib.range 1 (number * rows));
+        map (n: "Área de trabalho ${toString n}") (lib.range 1 (number * rows));
       number = 10;
       rows = 1;
     };

@@ -1,6 +1,6 @@
 {
   programs.plasma.kwin.tiling = {
-    padding = 10;
+    padding = 15;
     layout = {
       id = "82dece0e-5d1e-527e-a891-21c2c84c6f64";
       tiles = {

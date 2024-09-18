@@ -1,7 +1,9 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    where-is-my-sddm-theme
+    (catppuccin-where-is-my-sddm-theme.override {
+      flavor = config.catppuccin.flavor;
+    })
   ];
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm = {
