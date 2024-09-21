@@ -13,21 +13,23 @@
     ../common/global
     ../common/users/heitor
 
-    ../common/optional/kernel/latest.nix
-
     ../common/optional/desktop/plasma6.nix
+
+    ../common/optional/gaming/gamescope.nix
+    ../common/optional/gaming/steam.nix
+
+    ../common/optional/kernel/latest.nix
 
     ../common/optional/services/networkmanager.nix
     ../common/optional/services/pipewire.nix
     ../common/optional/services/plymouth.nix
 
-    ../common/optional/gaming/gamescope.nix
-    ../common/optional/gaming/steam.nix
+    ../common/optional/virtualisation/virt-manager.nix
+    ../common/optional/virtualisation/waydroid.nix
 
     ../common/optional/piper.nix
     ../common/optional/stevenblack.nix
     ../common/optional/systemd-boot.nix
-    ../common/optional/virt-manager.nix
   ];
 
   networking.hostName = "Charmander";
