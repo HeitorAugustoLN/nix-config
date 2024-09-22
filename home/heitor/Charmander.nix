@@ -23,29 +23,45 @@
     ./features/gaming/minecraft.nix
   ];
 
-  programs.plasma.input = {
-    keyboard = {
-      layouts = [
+  programs.plasma = {
+    input = {
+      keyboard = {
+        layouts = [
+          {
+            layout = "br";
+          }
+        ];
+        model = "pc104";
+        numlockOnStartup = "on";
+        switchingPolicy = "global";
+      };
+      mice = [
         {
-          layout = "br";
+          accelerationProfile = "none";
+          enable = true;
+          leftHanded = false;
+          middleButtonEmulation = false;
+          name = "Logitech G403 HERO Gaming Mouse";
+          naturalScroll = false;
+          productId = "c08f";
+          vendorId = "046d";
         }
       ];
-      model = "pc104";
-      numlockOnStartup = "on";
-      switchingPolicy = "global";
     };
-    mice = [
-      {
-        accelerationProfile = "none";
-        enable = true;
-        leftHanded = false;
-        middleButtonEmulation = false;
-        name = "Logitech G403 HERO Gaming Mouse";
-        naturalScroll = false;
-        productId = "c08f";
-        vendorId = "046d";
-      }
-    ];
+    powerdevil = {
+      AC = {
+        autoSuspend = {
+          action = "sleep";
+          idleTimeout = 1800;
+        };
+        powerButtonAction = "showLogoutScreen";
+        turnOffDisplay = {
+          idleTimeout = 900;
+          idleTimeoutWhenLocked = 60;
+        };
+      };
+      general.pausePlayersOnSuspend = true;
+    };
   };
 
   home.stateVersion = "24.11";

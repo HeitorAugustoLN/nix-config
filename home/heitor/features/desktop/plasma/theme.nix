@@ -8,6 +8,14 @@
 let
   catppuccinAccent = config.catppuccin.accent;
   catppuccinFlavor = config.catppuccin.flavor;
+
+  capitalizeWord =
+    word:
+    let
+      firstLetter = builtins.substring 0 1 word;
+      rest = builtins.substring 1 (builtins.stringLength word - 1) word;
+    in
+    "${lib.toUpper firstLetter}${rest}";
 in
 {
   home.packages = with pkgs; [
@@ -96,29 +104,19 @@ in
         pointSize = 10;
       };
     };
-    workspace =
-      let
-        capitalizeWord =
-          word:
-          let
-            firstLetter = builtins.substring 0 1 word;
-            rest = builtins.substring 1 (builtins.stringLength word - 1) word;
-          in
-          "${lib.toUpper firstLetter}${rest}";
-      in
-      {
-        clickItemTo = "open";
-        colorScheme = "Catppuccin${capitalizeWord catppuccinFlavor}${capitalizeWord catppuccinAccent}";
-        cursor = {
-          theme = "Catppuccin-${capitalizeWord catppuccinFlavor}-Dark";
-          size = 32;
-        };
-        iconTheme = "Papirus-Dark";
-        lookAndFeel = "org.kde.breezedark.desktop";
-        soundTheme = "ocean";
-        theme = "default";
-        tooltipDelay = 500;
-        wallpaper = inputs.wallpapers.desktop.by-theme.catppuccin.mocha.digital-art.eclipse;
+    workspace = {
+      clickItemTo = "open";
+      colorScheme = "Catppuccin${capitalizeWord catppuccinFlavor}${capitalizeWord catppuccinAccent}";
+      cursor = {
+        theme = "catppuccin-${catppuccinFlavor}-dark-cursors";
+        size = 32;
       };
+      iconTheme = "Papirus-Dark";
+      lookAndFeel = "org.kde.breezedark.desktop";
+      soundTheme = "ocean";
+      theme = "default";
+      tooltipDelay = 500;
+      wallpaper = inputs.wallpapers.desktop.by-theme.catppuccin.mocha.digital-art.eclipse;
+    };
   };
 }
