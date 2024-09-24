@@ -5,6 +5,13 @@
   pkgs,
   ...
 }:
+let
+  toLanguagePack =
+    locales:
+    map (
+      locale: builtins.replaceStrings [ "_" ] [ "-" ] (lib.strings.removeSuffix ".UTF-8/UTF-8" locale)
+    ) locales;
+in
 {
   imports = [ inputs.betterfox.homeManagerModules.betterfox ];
 
@@ -16,7 +23,7 @@
       version = "129.0";
     };
 
-    languagePacks = [ "pt-BR" ];
+    languagePacks = toLanguagePack osConfig.i18n.supportedLocales;
     nativeMessagingHosts = lib.optionals osConfig.services.desktopManager.plasma6.enable [
       pkgs.kdePackages.plasma-browser-integration
     ];
