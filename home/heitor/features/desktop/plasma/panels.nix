@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   programs.plasma = {
     configFile."plasma_calendar_astronomicalevents".General = {

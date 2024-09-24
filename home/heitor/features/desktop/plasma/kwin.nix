@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ lib, ... }:
 {
   programs.plasma.kwin = {
     effects = {
@@ -33,13 +33,8 @@
         "more-window-actions"
       ];
     };
-    virtualDesktops = {
-      names =
-        let
-          number = config.programs.plasma.kwin.virtualDesktops.number;
-          rows = config.programs.plasma.kwin.virtualDesktops.rows;
-        in
-        map (n: "Área de trabalho ${toString n}") (lib.range 1 (number * rows));
+    virtualDesktops = rec {
+      names = map (n: "Área de trabalho ${toString n}") (lib.range 1 (number * rows));
       number = 10;
       rows = 1;
     };
