@@ -49,6 +49,7 @@
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         betterttv
         bitwarden
+        catppuccin-gh-file-explorer
         darkreader
         dearrow
         firefox-color
