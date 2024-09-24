@@ -8,16 +8,16 @@
 let
   virtualDesktopsAmount = builtins.length config.programs.plasma.kwin.virtualDesktops.names;
   shiftedNumbersMap = {
-    "1" = "!";
-    "2" = "@";
-    "3" = "#";
-    "4" = "$";
-    "5" = "%";
-    "6" = "F6";
-    "7" = "&";
-    "8" = "*";
-    "9" = "(";
-    "10" = ")";
+    "1" = "+!";
+    "2" = "+@";
+    "3" = "+#";
+    "4" = "+$";
+    "5" = "+%";
+    "6" = "+ោ?"; # Why is this a cambodian character?
+    "7" = "+&";
+    "8" = "+*";
+    "9" = "+(";
+    "10" = "+)";
   };
   inherit (pkgs.stdenv.hostPlatform) system;
   myNeovim = inputs.neovim.packages.${system}.default;
@@ -46,7 +46,7 @@ in
               name = "Window to Desktop ${toString number}";
               value =
                 if shiftedNumbersMap ? "${toString number}" then
-                  "Ctrl+Alt+${shiftedNumbersMap.${toString number}}"
+                  "Ctrl+Alt${shiftedNumbersMap.${toString number}}"
                 else
                   "";
             }) (lib.range 1 virtualDesktopsAmount)
@@ -68,7 +68,7 @@ in
               name = "Window to Screen ${toString number}";
               value =
                 if shiftedNumbersMap ? "${toString number}" then
-                  "Meta+Alt+${shiftedNumbersMap.${toString number}}"
+                  "Meta+Alt${shiftedNumbersMap.${toString number}}"
                 else
                   "";
             }) (lib.range 1 7) # 7 is the maximum number of screens for KDE Plasma
