@@ -1,4 +1,10 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
 {
   imports = [ inputs.betterfox.homeManagerModules.betterfox ];
 
@@ -11,7 +17,9 @@
     };
 
     languagePacks = [ "pt-BR" ];
-    nativeMessagingHosts = with pkgs; [ plasma-browser-integration ];
+    nativeMessagingHosts = lib.optionals osConfig.services.desktopManager.plasma6.enable [
+      pkgs.kdePackages.plasma-browser-integration
+    ];
 
     profiles.Heitor = {
       isDefault = true;
@@ -46,21 +54,25 @@
         "extensions.autoDisableScopes" = 0;
       };
 
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        betterttv
-        bitwarden
-        catppuccin-gh-file-explorer
-        darkreader
-        dearrow
-        firefox-color
-        plasma-integration
-        return-youtube-dislikes
-        skip-redirect
-        sponsorblock
-        stylus
-        ublock-origin
-        violentmonkey
-      ];
+      extensions =
+        with pkgs.nur.repos.rycee.firefox-addons;
+        [
+          betterttv
+          bitwarden
+          catppuccin-gh-file-explorer
+          darkreader
+          dearrow
+          firefox-color
+          return-youtube-dislikes
+          skip-redirect
+          sponsorblock
+          stylus
+          ublock-origin
+          violentmonkey
+        ]
+        ++ lib.optionals osConfig.services.desktopManager.plasma6.enable [
+          plasma-integration
+        ];
 
       search = {
         force = true;
