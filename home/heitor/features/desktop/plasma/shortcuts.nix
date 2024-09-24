@@ -1,4 +1,10 @@
-{ config, lib, ... }:
+{
+  config,
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 let
   virtualDesktopsAmount = builtins.length config.programs.plasma.kwin.virtualDesktops.names;
   shiftedNumbersMap = {
@@ -13,6 +19,8 @@ let
     "9" = "(";
     "10" = ")";
   };
+  inherit (pkgs.stdenv.hostPlatform) system;
+  myNeovim = inputs.neovim.packages.${system}.default;
 in
 {
   programs.plasma = {
@@ -117,6 +125,11 @@ in
       (lib.mkIf config.programs.konsole.enable {
         "services/org.kde.konsole.desktop" = {
           _launch = "Meta+Alt+T";
+        };
+      })
+      (lib.mkIf (builtins.elem myNeovim config.home.packages) {
+        "services/nvim.desktop" = {
+          _launch = "Meta+Alt+V";
         };
       })
     ];
