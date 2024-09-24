@@ -32,49 +32,45 @@ in
           (builtins.listToAttrs (
             map (number: {
               name = "Switch to Desktop ${toString number}";
-              value = "${
+              value =
                 if number == 10 then
                   "Ctrl+Alt+0"
                 else if number > 10 then
                   ""
                 else
-                  "Ctrl+Alt+${toString number}"
-              }";
+                  "Ctrl+Alt+${toString number}";
             }) (lib.range 1 virtualDesktopsAmount)
           ))
           // (builtins.listToAttrs (
             map (number: {
               name = "Window to Desktop ${toString number}";
-              value = "${
+              value =
                 if shiftedNumbersMap ? "${toString number}" then
                   "Ctrl+Alt+${shiftedNumbersMap.${toString number}}"
                 else
-                  ""
-              }";
+                  "";
             }) (lib.range 1 virtualDesktopsAmount)
           ))
           // (builtins.listToAttrs (
             map (number: {
               name = "Switch to Screen ${toString number}";
-              value = "${
+              value =
                 if number == 10 then
                   "Meta+Alt+0"
                 else if number > 10 then
                   ""
                 else
-                  "Meta+Alt+${toString number}"
-              }";
+                  "Meta+Alt+${toString number}";
             }) (lib.range 1 7) # 7 is the maximum number of screens for KDE Plasma
           ))
           // (builtins.listToAttrs (
             map (number: {
               name = "Window to Screen ${toString number}";
-              value = "${
+              value =
                 if shiftedNumbersMap ? "${toString number}" then
                   "Meta+Alt+${shiftedNumbersMap.${toString number}}"
                 else
-                  ""
-              }";
+                  "";
             }) (lib.range 1 7) # 7 is the maximum number of screens for KDE Plasma
           ));
       }
