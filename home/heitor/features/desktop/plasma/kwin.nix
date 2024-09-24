@@ -33,10 +33,14 @@
         "more-window-actions"
       ];
     };
-    virtualDesktops = rec {
-      names = map (n: "Área de trabalho ${toString n}") (lib.range 1 (number * rows));
-      number = 10;
-      rows = 1;
-    };
+    virtualDesktops =
+      let
+        number = 10;
+        rows = 1;
+      in
+      {
+        names = map (n: "Área de trabalho ${toString n}") (lib.range 1 (number * rows));
+        inherit number rows;
+      };
   };
 }
