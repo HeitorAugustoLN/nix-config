@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ kara ];
-
   programs.plasma = {
     configFile."plasma_calendar_astronomicalevents".General = {
       showLunarPhase = true;
