@@ -3,8 +3,8 @@ let
   catppuccinFlavor = config.catppuccin.flavor;
 in
 {
-  home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  home.packages = [
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
 
   programs.konsole = {
