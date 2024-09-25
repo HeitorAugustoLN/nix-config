@@ -36,11 +36,11 @@
     virtualDesktops =
       let
         number = 10;
-        rows = 1;
       in
       {
-        names = map (n: "Área de trabalho ${toString n}") (lib.range 1 (number * rows));
-        inherit number rows;
+        names = map (n: "Área de trabalho ${toString n}") (lib.range 1 number);
+        inherit number;
+        rows = 1;
       };
   };
 }
