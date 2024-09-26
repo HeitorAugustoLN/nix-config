@@ -19,7 +19,7 @@
 
     # Packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     nur.url = "github:nix-community/NUR"; # Nix User Repository: User contributed nix packages
 
     # User-specific configuration
@@ -64,6 +64,7 @@
       };
     };
 
+    # Wallpapers collection that I use
     wallpapers = {
       url = "github:HeitorAugustoLN/wallpapers";
       inputs.nixpkgs.follows = "nixpkgs";
