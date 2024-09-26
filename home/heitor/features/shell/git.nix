@@ -1,4 +1,3 @@
-# This will be moved somewhere else soon
 { osConfig, ... }:
 {
   programs.git = {
