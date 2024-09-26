@@ -4,6 +4,8 @@
 
     ./features/apps/browsers/firefox.nix
 
+    ./features/apps/communication/discord.nix
+
     ./features/apps/editors/neovim.nix
 
     ./features/apps/media/kdenlive.nix
