@@ -13,7 +13,7 @@
     ../common/global
     ../common/users/heitor
 
-    ../common/optional/desktop/plasma6.nix
+    ../common/optional/desktop/plasma.nix
 
     ../common/optional/gaming/gamescope.nix
     ../common/optional/gaming/steam.nix
