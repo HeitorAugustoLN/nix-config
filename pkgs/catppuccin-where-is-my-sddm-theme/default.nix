@@ -11,7 +11,7 @@ let
     owner = "HeitorAugustoLN";
     repo = "catppuccin-where-is-my-sddm-theme";
     rev = "main";
-    hash = "sha256-iPiExjO+1euylC3HvPPKLfcuKBwcUqSGyomfYzxS9Yg=";
+    hash = "sha256-xh1ySmNYyGntcSQ60n1aRbAqblBxoxIiO8SAxiI5gwA=";
   };
   validVariants = [
     "qt5"
