@@ -114,7 +114,10 @@ in
         };
 
         "services/org.kde.krunner.desktop" = {
-          _launch = "Alt+Space\tSearch";
+          _launch = builtins.concatStringsSep "\t" [
+            "Alt+Space"
+            "Search"
+          ];
         };
       }
       (lib.mkIf config.programs.firefox.enable {
