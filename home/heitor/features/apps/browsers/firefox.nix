@@ -20,7 +20,7 @@ in
 
     betterfox = {
       enable = true;
-      version = "129.0";
+      version = "main";
     };
 
     languagePacks = toLanguagePack osConfig.i18n.supportedLocales;
