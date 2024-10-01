@@ -24,9 +24,11 @@ in
     };
 
     languagePacks = toLanguagePack osConfig.i18n.supportedLocales;
-    nativeMessagingHosts = lib.optionals osConfig.services.desktopManager.plasma6.enable [
-      pkgs.kdePackages.plasma-browser-integration
-    ];
+    nativeMessagingHosts =
+      [ pkgs.tridactyl-native ]
+      ++ lib.optionals osConfig.services.desktopManager.plasma6.enable [
+        pkgs.kdePackages.plasma-browser-integration
+      ];
 
     profiles.Heitor = {
       isDefault = true;
@@ -74,6 +76,7 @@ in
           skip-redirect
           sponsorblock
           stylus
+          tridactyl
           ublock-origin
           violentmonkey
         ]
