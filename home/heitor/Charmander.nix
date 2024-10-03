@@ -9,6 +9,7 @@
     ./features/apps/editors/neovim.nix
 
     ./features/apps/media/kdenlive.nix
+    ./features/apps/media/mpv.nix
     ./features/apps/media/obs-studio.nix
     ./features/apps/media/spotify.nix
     ./features/apps/media/stremio.nix
