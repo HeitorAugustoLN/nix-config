@@ -3,12 +3,14 @@
   programs.git = {
     enable = true;
     extraConfig = {
+      commit = {
+        gpgsign = true;
+      };
       core = {
         editor = "nvim";
       };
       gpg = {
         format = "ssh";
-        gpgsign = true;
       };
       init = {
         defaultBranch = "main";
