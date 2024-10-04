@@ -31,10 +31,7 @@ in
     # Each hosts public key
     knownHosts = lib.genAttrs hosts (hostname: {
       publicKeyFile = ../../${hostname}/ssh_host_ed25519_key.pub;
-      extraHostNames =
-        [ ]
-        # Alias for localhost if it's the same host
-        ++ (lib.optional (hostname == config.networking.hostName) "localhost");
+      extraHostNames = lib.optionals (hostname == config.networking.hostName) [ "localhost" ]; # Alias for localhost if it's the same host
     });
     startAgent = true;
   };
