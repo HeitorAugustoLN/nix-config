@@ -8,6 +8,7 @@
       };
       gpg = {
         format = "ssh";
+        gpgsign = true;
       };
       init = {
         defaultBranch = "main";

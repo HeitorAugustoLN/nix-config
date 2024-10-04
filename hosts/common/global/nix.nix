@@ -28,7 +28,7 @@ in
 
     # Add each flake input as a registry and nix_path
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-    registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
+    registry = builtins.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
   };
 
   nixpkgs = {
