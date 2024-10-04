@@ -7,7 +7,7 @@ in
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than +3"; # Keep the last 3 generations
+      options = "--delete-older-than 7d"; # Keep the last 3 generations
     };
     settings = {
       auto-optimise-store = true;
