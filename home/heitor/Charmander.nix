@@ -21,6 +21,7 @@
 
     ./features/desktop/plasma
 
+    ./features/gaming/bottles.nix
     ./features/gaming/heroic.nix
     ./features/gaming/mangohud.nix
     ./features/gaming/minecraft.nix
