@@ -5,6 +5,16 @@
     additions = final: _prev: import ../pkgs/all-packages.nix { pkgs = final; };
 
     modifications = final: prev: {
+      kara = prev.kara.overrideAttrs (
+        finalAttrs: oldAttrs: {
+          version = "unstable";
+          src = prev.fetchFromGitHub {
+            inherit (oldAttrs.src) owner repo;
+            rev = "main";
+            hash = "sha256-/sTroJn15blPUOW5/2nlcnz0lApqAUpnNuJK6EWQl0A=";
+          };
+        }
+      );
       plasmusic-toolbar = prev.plasmusic-toolbar.overrideAttrs (
         finalAttrs: oldAttrs: {
           version = "2.0.0";

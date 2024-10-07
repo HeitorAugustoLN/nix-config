@@ -1,10 +1,12 @@
 {
   programs.plasma = {
-    configFile."plasma_calendar_astronomicalevents".General = {
-      showLunarPhase = true;
-      showSeason = true;
+    configFile = {
+      plasma_calendar_astronomicalevents.General = {
+        showLunarPhase = true;
+        showSeason = true;
+      };
+      plasma_calendar_holiday_regions.General.selectedRegions = "br_pt-br";
     };
-    configFile."plasma_calendar_holiday_regions".General.selectedRegions = "br_pt-br";
 
     panels = [
       # Dock
