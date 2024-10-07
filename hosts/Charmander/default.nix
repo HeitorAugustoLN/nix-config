@@ -13,6 +13,7 @@
     ../common/global
     ../common/users/heitor
 
+    ../common/optional/bootloader/systemd-boot.nix
     ../common/optional/desktop/plasma.nix
 
     ../common/optional/gaming/gamescope.nix
@@ -29,7 +30,6 @@
 
     ../common/optional/piper.nix
     ../common/optional/stevenblack.nix
-    ../common/optional/systemd-boot.nix
   ];
 
   networking.hostName = "Charmander";
