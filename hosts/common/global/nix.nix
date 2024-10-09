@@ -34,7 +34,8 @@ in
   nixpkgs = {
     overlays = [
       inputs.nur.overlay
-    ] ++ (builtins.attrValues inputs.self.overlays);
+      inputs.catppuccin-where-is-my-sddm-theme.overlays.default
+    ] ++ builtins.attrValues inputs.self.overlays;
     config = {
       allowUnfree = true;
     };

@@ -39,6 +39,10 @@
 
     # System and user theme
     catppuccin.url = "github:catppuccin/nix";
+    catppuccin-where-is-my-sddm-theme = {
+      url = "github:HeitorAugustoLN/catppuccin-where-is-my-sddm-theme";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # KDE Plasma and KDE apps configuration
     plasma-manager = {
@@ -69,6 +73,7 @@
       url = "github:HeitorAugustoLN/wallpapers";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
   outputs =

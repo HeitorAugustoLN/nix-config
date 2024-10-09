@@ -35,6 +35,26 @@
         "type": "github"
       }
     },
+    "catppuccin-where-is-my-sddm-theme": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1728241026,
+        "narHash": "sha256-3shYDzqSRofetqWKYxBV6DRpZmi5Qn2iWdyW2YluAuc=",
+        "owner": "HeitorAugustoLN",
+        "repo": "catppuccin-where-is-my-sddm-theme",
+        "rev": "2516ee8df7281ec56268f4ce921cf92b783cfaba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HeitorAugustoLN",
+        "repo": "catppuccin-where-is-my-sddm-theme",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -254,6 +274,7 @@
       "inputs": {
         "betterfox": "betterfox",
         "catppuccin": "catppuccin",
+        "catppuccin-where-is-my-sddm-theme": "catppuccin-where-is-my-sddm-theme",
         "disko": "disko",
         "flake-parts": "flake-parts",
         "hardware": "hardware",
