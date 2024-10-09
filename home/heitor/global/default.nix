@@ -7,7 +7,7 @@
 {
   imports = [
     ./catppuccin.nix
-  ] ++ (builtins.attrValues inputs.self.homeManagerModules);
+  ] ++ builtins.attrValues inputs.self.homeManagerModules;
 
   home = {
     username = lib.mkDefault "heitor";

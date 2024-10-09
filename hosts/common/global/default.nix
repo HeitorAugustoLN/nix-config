@@ -15,7 +15,7 @@
     ./security.nix
     ./sops.nix
     ./sudo.nix
-  ] ++ (builtins.attrValues inputs.self.nixosModules);
+  ] ++ builtins.attrValues inputs.self.nixosModules;
 
   boot.initrd.systemd.enable = true;
 
