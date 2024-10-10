@@ -40,6 +40,7 @@ buildGoModule rec {
     pkg-config
     makeBinaryWrapper
   ];
+
   buildInputs = [
     xorg.libX11
     xorg.libXcursor
@@ -76,8 +77,10 @@ buildGoModule rec {
   meta = {
     description = "Open-source, minimal, configurable, fast bootstrapper for running Roblox on Linux";
     homepage = "https://github.com/vinegarhq/vinegar";
+    changelog = "https://github.com/vinegarhq/vinegar/releases/tag/v${version}";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [ HeitorAugustoLN ];
     mainProgram = "vinegar";
+    platforms = [ "x86_64-linux" ];
   };
 }
