@@ -3,4 +3,5 @@
   ...
 }:
 {
+  vinegar = pkgs.callPackage ./vinegar { };
 }
