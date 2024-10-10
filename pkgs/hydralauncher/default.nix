@@ -102,6 +102,7 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "Hydra is a game launcher with its own embedded bittorrent client";
     homepage = "https://github.com/hydralauncher/hydra";
+    changelog = "https://github.com/hydralauncher/hydra/releases/tag/v${finalAttrs.version}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ HeitorAugustoLN ];
     mainProgram = "hydralauncher";
