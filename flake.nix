@@ -1,5 +1,5 @@
 {
-  description = "HeitorAugustoLN's personal Nix configuration flake.";
+  description = "HeitorAugustoLN's personal Nix configuration flake";
 
   inputs = {
     # Flake framework
