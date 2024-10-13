@@ -22,16 +22,37 @@
     },
     "catppuccin": {
       "locked": {
-        "lastModified": 1727910534,
-        "narHash": "sha256-IjdGPDnBNk3r5h02kiPTKUOfn+UiKNWlhy/ozC0NgyQ=",
+        "lastModified": 1728407414,
+        "narHash": "sha256-B8LaxUP93eh+it8RW1pGq4SsU2kj7f0ipzFuhBvpON8=",
         "owner": "catppuccin",
         "repo": "nix",
-        "rev": "bad96d3fabf8d2e8f0bf0c2cb899a9fccf01ea03",
+        "rev": "96cf8b4a05fb23a53c027621b1147b5cf9e5439f",
         "type": "github"
       },
       "original": {
         "owner": "catppuccin",
         "repo": "nix",
+        "type": "github"
+      }
+    },
+    "catppuccin-palette": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1728786157,
+        "narHash": "sha256-Q7YGAwdSr3bxQwS5x/DEcFaBlYMb3Iw9juDl/Vfs7as=",
+        "owner": "HeitorAugustoLN",
+        "repo": "palette",
+        "rev": "cced370248baa237ff9467fe9bb6469f6ec6a8c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HeitorAugustoLN",
+        "ref": "flake",
+        "repo": "palette",
         "type": "github"
       }
     },
@@ -42,16 +63,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1728241026,
-        "narHash": "sha256-3shYDzqSRofetqWKYxBV6DRpZmi5Qn2iWdyW2YluAuc=",
-        "owner": "HeitorAugustoLN",
-        "repo": "catppuccin-where-is-my-sddm-theme",
-        "rev": "2516ee8df7281ec56268f4ce921cf92b783cfaba",
+        "lastModified": 1728788156,
+        "narHash": "sha256-/b/E2N0rresDKr2Q9pOE01Mc8hMsNQZ/xd7M+E0Fcrk=",
+        "owner": "catppuccin",
+        "repo": "where-is-my-sddm-theme",
+        "rev": "a554c409fe0d8ebd1925cd80fe1652b7f866550f",
         "type": "github"
       },
       "original": {
-        "owner": "HeitorAugustoLN",
-        "repo": "catppuccin-where-is-my-sddm-theme",
+        "owner": "catppuccin",
+        "repo": "where-is-my-sddm-theme",
         "type": "github"
       }
     },
@@ -274,6 +295,7 @@
       "inputs": {
         "betterfox": "betterfox",
         "catppuccin": "catppuccin",
+        "catppuccin-palette": "catppuccin-palette",
         "catppuccin-where-is-my-sddm-theme": "catppuccin-where-is-my-sddm-theme",
         "disko": "disko",
         "flake-parts": "flake-parts",

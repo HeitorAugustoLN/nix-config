@@ -39,8 +39,12 @@
 
     # System and user theme
     catppuccin.url = "github:catppuccin/nix";
+    catppuccin-palette = {
+      url = "github:HeitorAugustoLN/palette/flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     catppuccin-where-is-my-sddm-theme = {
-      url = "github:HeitorAugustoLN/catppuccin-where-is-my-sddm-theme";
+      url = "github:catppuccin/where-is-my-sddm-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
