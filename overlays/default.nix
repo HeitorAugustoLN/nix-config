@@ -24,6 +24,15 @@
           };
         }
       );
+      plasma-panel-colorizer = prev.plasma-panel-colorizer.overrideAttrs (
+        finalAttrs: oldAttrs: {
+          version = "1.0.0";
+          src = prev.fetchFromGitHub {
+            inherit (oldAttrs.src) owner repo rev;
+            hash = "sha256-O+qIsYF0E+9LeiDcOUh8pZVY1rVoMlniju6yLact2Bc=";
+          };
+        }
+      );
     };
 
     # Acessible through 'pkgs.stable'
