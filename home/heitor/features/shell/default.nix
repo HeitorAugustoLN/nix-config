@@ -10,6 +10,7 @@
     ./gh.nix
     ./git.nix
     ./starship.nix
+    ./zellij.nix
     ./zoxide.nix
   ];
 }
