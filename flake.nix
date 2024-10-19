@@ -65,7 +65,7 @@
 
     # Neovim
     neovim = {
-      url = "github:HeitorAugustoLN/Aria";
+      url = "github:HeitorAugustoLN/nvim-config";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

@@ -116,6 +116,28 @@
         "type": "github"
       }
     },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "neovim",
+          "neovim-nightly",
+          "hercules-ci-effects",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1712014858,
+        "narHash": "sha256-sB4SWl2lX95bExY2gMFG5HIzvva5AVMJd4Igm+GpZNw=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "9126214d0a59633752a136528f5f3b9aa8565b7d",
+        "type": "github"
+      },
+      "original": {
+        "id": "flake-parts",
+        "type": "indirect"
+      }
+    },
     "hardware": {
       "locked": {
         "lastModified": 1727665282,
@@ -128,6 +150,29 @@
       "original": {
         "owner": "nixos",
         "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
+    "hercules-ci-effects": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": [
+          "neovim",
+          "neovim-nightly",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1724947644,
+        "narHash": "sha256-MHHrHasTngp7EYQOObHJ1a/IsRF+wodHqOckhH6uZbk=",
+        "owner": "hercules-ci",
+        "repo": "hercules-ci-effects",
+        "rev": "dba4367b9a9d9615456c430a6d6af716f6e84cef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "hercules-ci-effects",
         "type": "github"
       }
     },
@@ -156,22 +201,72 @@
         "flake-parts": [
           "flake-parts"
         ],
+        "neovim-nightly": "neovim-nightly",
         "nixpkgs": [
           "nixpkgs"
         ],
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1726353365,
-        "narHash": "sha256-mdS0Kng1k0unM6mliXM49zPapksu7vlmtzL4KNcTVoI=",
+        "lastModified": 1728790634,
+        "narHash": "sha256-Bmcac0L3PGiuXwDg3TibwWMGOfQ3RPcqe9jMFEHCPOs=",
         "owner": "HeitorAugustoLN",
-        "repo": "Aria",
-        "rev": "cb17bbbca66f8b4047542d154da33b958ad2b916",
+        "repo": "nvim-config",
+        "rev": "d6686403136a7545301c0f7e7c0692ad485500b7",
         "type": "github"
       },
       "original": {
         "owner": "HeitorAugustoLN",
-        "repo": "Aria",
+        "repo": "nvim-config",
+        "type": "github"
+      }
+    },
+    "neovim-nightly": {
+      "inputs": {
+        "flake-compat": [
+          "neovim"
+        ],
+        "flake-parts": [
+          "neovim",
+          "flake-parts"
+        ],
+        "git-hooks": [
+          "neovim"
+        ],
+        "hercules-ci-effects": "hercules-ci-effects",
+        "neovim-src": "neovim-src",
+        "nixpkgs": [
+          "neovim",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1729147490,
+        "narHash": "sha256-F0/iQVbbIFctMPwK4JEd4fxVzNwaq7NnD5oen59S24s=",
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "rev": "e2047498667aeb24e8493ff430a20cff713915f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "type": "github"
+      }
+    },
+    "neovim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1729121305,
+        "narHash": "sha256-c94xkA/RuszC4PfmB+MWqOo2vbO66GTO6XKer0mbltA=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "852954ff6d96adce0158f74ca494fdcef3aa1921",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovim",
+        "repo": "neovim",
         "type": "github"
       }
     },
