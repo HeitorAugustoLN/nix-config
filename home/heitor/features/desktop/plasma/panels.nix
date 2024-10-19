@@ -167,7 +167,6 @@
               compactView = false;
             };
           }
-          { plasmaPanelColorizer = { }; }
           {
             panelSpacer = {
               expanding = true;
