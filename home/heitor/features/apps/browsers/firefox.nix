@@ -46,19 +46,14 @@ in
 
         # Disable login manager
         "signon.rememberSignons" = false;
+
         # Disable address and credit card manager
         "extensions.formautofill.addresses.enabled" = false;
         "extensions.formautofill.creditCards.enabled" = false;
 
-        # Disable disk cache
-        "browser.cache.disk.enable" = false;
-
         # Enable DRM by default
         "browser.eme.ui.enabled" = true;
         "media.eme.enabled" = true;
-
-        # Automatically enable extensions
-        "extensions.autoDisableScopes" = 0;
       };
 
       extensions =
@@ -96,6 +91,7 @@ in
           {
             "DuckDuckGo" = mkEngine "duckduckgo" "https://duckduckgo.com/?q={searchTerms}";
             "Google" = mkEngine "google" "https://www.google.com/search?q={searchTerms}";
+            "Noogle" = mkEngine "noogle" "https://noogle.dev/q?term={searchTerms}";
             "Bing".metaData.hidden = true;
           };
       };
