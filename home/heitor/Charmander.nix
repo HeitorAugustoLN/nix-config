@@ -3,6 +3,7 @@
     ./global
 
     ./features/apps/browsers/firefox.nix
+    ./features/apps/browsers/brave.nix
 
     ./features/apps/communication/discord.nix
 

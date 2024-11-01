@@ -183,15 +183,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1730016908,
-        "narHash": "sha256-bFCxJco7d8IgmjfNExNz9knP8wvwbXU4s/d53KOK6U0=",
-        "owner": "nix-community",
+        "lastModified": 1730237732,
+        "narHash": "sha256-ISzAT/i+8PMX40QLfkyat46irQYis46nYSm6MoIlz9s=",
+        "owner": "HeitorAugustoLN",
         "repo": "home-manager",
-        "rev": "e83414058edd339148dc142a8437edb9450574c8",
+        "rev": "10b0e3108bd53b9d90b6adabeb666109dca6a483",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "HeitorAugustoLN",
+        "ref": "chromium-nativemessaginghosts",
         "repo": "home-manager",
         "type": "github"
       }
