@@ -4,7 +4,7 @@
     appearance = {
       alwaysShowClock = true;
       showMediaControls = false;
-      wallpaper = config.programs.plasma.workspace.wallpaper;
+      inherit (config.programs.plasma.workspace) wallpaper;
     };
 
     autoLock = true;

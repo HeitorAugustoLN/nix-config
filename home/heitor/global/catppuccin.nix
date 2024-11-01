@@ -5,8 +5,8 @@
   ...
 }:
 let
-  accent = osConfig.catppuccin.accent;
-  flavor = osConfig.catppuccin.flavor;
+  inherit (osConfig.catppuccin) accent;
+  inherit (osConfig.catppuccin) flavor;
 in
 {
   imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
