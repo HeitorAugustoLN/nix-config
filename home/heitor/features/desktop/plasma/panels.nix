@@ -74,6 +74,7 @@
                 };
                 icon = "view-media-track";
               };
+              playbackSource = "auto";
               songText = {
                 displayInSeparateLines = true;
                 maximumWidth = 600;
@@ -83,9 +84,6 @@
                   resetOnPause = true;
                   speed = 3;
                 };
-              };
-              settings = {
-                choosePlayerAutomatically = true;
               };
             };
           }
