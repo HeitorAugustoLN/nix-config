@@ -109,7 +109,7 @@ in
       colorScheme = "Catppuccin${capitalizeWord catppuccinFlavor}${capitalizeWord catppuccinAccent}";
       cursor = {
         theme = "catppuccin-${catppuccinFlavor}-dark-cursors";
-        size = 32;
+        size = 24;
       };
       iconTheme = "Papirus-Dark";
       lookAndFeel = "org.kde.breezedark.desktop";
