@@ -9,6 +9,7 @@
     ./gamemode.nix
     ./kdeconnect.nix
     ./locale.nix
+    ./nh.nix
     ./nix.nix
     ./nix-ld.nix
     ./openssh.nix
