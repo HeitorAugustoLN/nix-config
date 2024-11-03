@@ -24,7 +24,6 @@
 
     ./features/gaming/bottles.nix
     ./features/gaming/heroic.nix
-    ./features/gaming/lutris.nix
     ./features/gaming/mangohud.nix
     ./features/gaming/minecraft.nix
   ];
