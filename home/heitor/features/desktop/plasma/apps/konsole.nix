@@ -4,7 +4,7 @@ let
 in
 {
   home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
+    pkgs.nerd-fonts.fira-code
   ];
 
   programs.konsole = {
