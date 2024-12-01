@@ -3,9 +3,7 @@ let
   catppuccinFlavor = config.catppuccin.flavor;
 in
 {
-  home.packages = [
-    pkgs.nerd-fonts.fira-code
-  ];
+  home.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
   programs.konsole = {
     enable = true;
@@ -29,7 +27,7 @@ in
       Heitor = {
         colorScheme = "catppuccin-${catppuccinFlavor}";
         font = {
-          name = "FiraCode Nerd Font";
+          name = "JetBrainsMono Nerd Font";
           size = 12;
         };
       };
