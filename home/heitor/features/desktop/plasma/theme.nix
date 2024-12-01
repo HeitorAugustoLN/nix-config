@@ -28,7 +28,7 @@ in
       accent = catppuccinAccent;
       flavor = catppuccinFlavor;
     })
-    fira-code
+    jetbrains-mono
     inter
   ];
 
@@ -84,7 +84,7 @@ in
         pointSize = 10;
       };
       fixedWidth = {
-        family = "Fira Code";
+        family = "JetBrains Mono";
         pointSize = 10;
       };
       small = {
