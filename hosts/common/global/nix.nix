@@ -28,7 +28,7 @@ in
 
   nixpkgs = {
     overlays = [
-      inputs.nur.overlay
+      inputs.nur.overlays.default
       inputs.catppuccin-where-is-my-sddm-theme.overlays.default
     ] ++ builtins.attrValues inputs.self.overlays;
     config = {
