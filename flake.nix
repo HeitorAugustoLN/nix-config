@@ -89,6 +89,8 @@
         ./modules
         ./overlays
         ./pkgs
+
+        ./flake/configurations.nix
       ];
 
       perSystem =
