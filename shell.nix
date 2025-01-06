@@ -1,17 +1,12 @@
-{
-  pkgs ? import <nixpkgs> { },
-  ...
-}:
-{
-  default = pkgs.mkShell {
-    NIX_CONFIG = "extra-experimental-features = nix-command flakes";
-    nativeBuildInputs = with pkgs; [
-      age
-      sops
-      ssh-to-age
-
-      git
-      nix
-    ];
-  };
-}
+(import (
+  let
+    lock = builtins.fromJSON (builtins.readFile ./flake.lock);
+    nodeName = lock.nodes.root.inputs.flake-compat;
+  in
+  builtins.fetchTarball {
+    url = "https://github.com/edolstra/flake-compat/archive/${
+      lock.nodes.${nodeName}.locked.rev
+    }.tar.gz";
+    sha256 = lock.nodes.${nodeName}.locked.narHash;
+  }
+) { src = ./.; }).shellNix

@@ -4,7 +4,7 @@
     # My custom packages
     additions = final: _prev: import ../pkgs/all-packages.nix { pkgs = final; };
 
-    modifications = final: prev: { };
+    modifications = _final: _prev: { };
 
     # Acessible through 'pkgs.stable'
     stable-packages = final: _prev: {
