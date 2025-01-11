@@ -108,8 +108,6 @@
       imports = [
         ./hosts
         ./modules
-        ./overlays
-        ./pkgs
 
         ./flake
       ];
