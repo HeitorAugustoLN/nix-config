@@ -81,6 +81,6 @@
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
-      imports = [ ];
+      imports = [ ./flake ];
     };
 }
