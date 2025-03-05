@@ -141,6 +141,7 @@ in
             inputs.nixpkgs.lib.nixosSystem {
               modules =
                 [
+                  ../hosts/common/core
                   {
                     networking = {
                       hostName = mkDefault name;
@@ -148,7 +149,6 @@ in
                     };
 
                     nixpkgs.hostPlatform = value.system;
-                    programs.command-not-found.enable = false;
                   }
                 ]
                 ++ attrValues self.nixosModules

@@ -4,5 +4,7 @@
     ./dev-shells.nix
     ./formatters.nix
     ./git-hooks.nix
+    ../hosts
+    ../modules
   ];
 }

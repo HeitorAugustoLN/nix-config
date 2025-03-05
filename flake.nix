@@ -41,6 +41,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim = {
+      url = "github:HeitorAugustoLN/nvim-config";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        flake-parts.follows = "flake-parts";
+        git-hooks.follows = "git-hooks";
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs = {
@@ -51,6 +64,7 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-fish4.url = "github:NixOS/nixpkgs/nixos-unstable-small";
 
     nur = {
       url = "github:nix-community/NUR";

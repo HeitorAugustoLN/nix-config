@@ -7,6 +7,10 @@ creation_rules:
     key_groups:
       - age:
           - *heitor_at_axolotl
+  - path_regex: ^secrets/hosts/common/[^/]+\.ya?ml$
+    key_groups:
+      - age:
+          - *axolotl
   - path_regex: ^secrets/hosts/axolotl/[^/]+\.ya?ml$
     key_groups:
       - age:
