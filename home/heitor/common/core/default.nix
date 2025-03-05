@@ -1,8 +1,12 @@
 { config, ... }:
 {
   imports = [
+    ./brave.nix
     ./catppuccin.nix
+    ./cosmic
     ./flatpak.nix
+    ./ghostty.nix
+    ./mpv.nix
     ./neovim.nix
     ./shell
     ./sops.nix

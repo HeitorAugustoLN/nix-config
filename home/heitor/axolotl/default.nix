@@ -1,17 +1,22 @@
-{ cosmicLib, inputs, ... }:
+{
+  cosmicLib,
+  inputs,
+  pkgs,
+  ...
+}:
 let
   inherit (cosmicLib) singleton;
   inherit (cosmicLib.cosmic) mkRon;
 in
 {
-  imports = [
-    ../common/optional/brave.nix
-    ../common/optional/cosmic
-    ../common/optional/ghostty.nix
-    ../common/optional/mpv.nix
-    ../common/optional/spotify.nix
-    ../common/optional/stremio.nix
-  ];
+  home = {
+    packages = with pkgs; [
+      spotify
+      stremio
+    ];
+
+    stateVersion = "24.11";
+  };
 
   wayland.desktopManager.cosmic = {
     idle = {
@@ -37,6 +42,4 @@ in
       }
     ];
   };
-
-  home.stateVersion = "24.11";
 }

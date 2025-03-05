@@ -16,6 +16,7 @@ in
 
     ./catppuccin.nix
     ./console.nix
+    ./cosmic.nix
     ./fish.nix
     ./flatpak.nix
     ./locale.nix
@@ -23,9 +24,11 @@ in
     ./nix.nix
     ./nix-ld.nix
     ./openssh.nix
+    ./pipewire.nix
     ./security.nix
     ./sops.nix
     ./stevenblack.nix
+    ./systemd-boot.nix
     ./xdg.nix
     ./zram.nix
   ];
