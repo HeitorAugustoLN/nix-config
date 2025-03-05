@@ -18,7 +18,6 @@ in
       daemonCPUSchedPolicy = mkDefault "batch";
       daemonIOSchedClass = mkDefault "idle";
       daemonIOSchedPriority = mkDefault 7;
-
       nixPath = mapAttrsToList (name: _: "${name}=flake:${name}") flakeInputs;
       registry = mapAttrs (_: flake: { inherit flake; }) flakeInputs;
 

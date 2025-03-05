@@ -11,14 +11,6 @@ in
 {
   services.openssh = {
     enable = true;
-
-    hostKeys = [
-      {
-        type = "ed25519";
-        path = "/etc/ssh/host-ed25519-sops";
-      }
-    ];
-
     ports = [ 1337 ];
 
     settings = {
