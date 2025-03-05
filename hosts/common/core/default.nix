@@ -26,8 +26,8 @@ in
     ./security.nix
     ./sops.nix
     ./stevenblack.nix
-    ./zram.nix
     ./xdg.nix
+    ./zram.nix
   ];
 
   boot = {
