@@ -77,6 +77,7 @@ in
     in
     mkOption {
       type = types.attrsOf configurationSubmodule;
+      default = { };
       example.my-configuration = {
         modules = [
           {

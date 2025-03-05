@@ -1,0 +1,13 @@
+keys:
+  - &axolotl age1k0qg6ah5cs36l2n5vaxymymxws8e4n4c0gv3wqgwkfq95h3vd9ysl33mee
+  - &heitor_at_axolotl age1md83kpt80rp0p03fvcutelmvjgavaefjlcq5nn6kjg5zjgp94ydsks4tn8
+
+creation_rules:
+  - path_regex: ^secrets/users/heitor/[^/]+\.ya?ml$
+    key_groups:
+      - age:
+          - *heitor_at_axolotl
+  - path_regex: ^secrets/hosts/axolotl/[^/]+\.ya?ml$
+    key_groups:
+      - age:
+          - *axolotl
