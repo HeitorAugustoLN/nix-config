@@ -1,11 +1,7 @@
-{ inputs, ... }:
 {
-  flake.nixosConfigurations = {
-    Charmander = inputs.nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit inputs;
-      };
-      modules = [ ./Charmander ];
-    };
+  nexus.configurations.axolotl = {
+    modules = [ ./axolotl ];
+    system = "x86_64-linux";
+    type = "nixos";
   };
 }

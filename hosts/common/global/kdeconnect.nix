@@ -1,1 +1,0 @@
-{ programs.kdeconnect.enable = true; }

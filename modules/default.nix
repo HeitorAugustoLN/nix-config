@@ -1,6 +1,9 @@
+{ inputs, ... }:
 {
+  imports = [ inputs.home-manager.flakeModules.home-manager ];
+
   flake = {
-    homeManagerModules = import ./home-manager;
-    nixosModules = import ./nixos;
+    homeManagerModules = { };
+    nixosModules = { };
   };
 }

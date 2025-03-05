@@ -1,31 +1,44 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  self,
+  ...
+}:
 let
-  ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
+  inherit (builtins) attrValues filter hasAttr;
+  inherit (lib) mkDefault;
 in
 {
-  users = {
-    mutableUsers = false;
-    users.heitor = {
-      description = "Heitor Augusto";
-      group = "users";
-      extraGroups = ifTheyExist [
-        "networkmanager"
-        "wheel"
-      ];
-      hashedPasswordFile = config.sops.secrets.heitor-password.path;
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # Venusaur SSH Key
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWo7o4Y5yRnFf5tyqEpWHB+GLqRx9dyNoyY7i5XOn+t IAm.HeitorALN@proton.me"
-      ];
-      shell = pkgs.fish;
-    };
-  };
+  home-manager.users.heitor.imports = [
+    ../../../../home/heitor/${config.networking.hostName}
+    ../../../../home/heitor/common/core
+  ] ++ attrValues self.homeManagerModules;
 
   sops.secrets.heitor-password = {
-    sopsFile = ../../secrets.yaml;
     neededForUsers = true;
+    sopsFile = ../../../../secrets/hosts/common/default.yaml;
   };
 
-  home-manager.users.heitor = import ../../../../home/heitor/${config.networking.hostName}.nix;
+  users = {
+    mutableUsers = false;
+
+    users = {
+      heitor = {
+        description = "Heitor Augusto";
+
+        extraGroups = filter (group: hasAttr group config.users.groups) [
+          "networkmanager"
+          "wheel"
+        ];
+
+        group = "users";
+        hashedPasswordFile = config.sops.secrets.heitor-password.path;
+        isNormalUser = true;
+        shell = pkgs.fish;
+      };
+
+      root.hashedPasswordFile = mkDefault config.sops.secrets.heitor-password.path;
+    };
+  };
 }
