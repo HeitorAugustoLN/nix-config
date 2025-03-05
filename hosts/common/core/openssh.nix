@@ -1,13 +1,4 @@
-{
-  config,
-  lib,
-  self,
-  ...
-}:
-let
-  inherit (builtins) attrNames;
-  inherit (lib) genAttrs optionals;
-in
+{ config, ... }:
 {
   services.openssh = {
     enable = true;
@@ -66,11 +57,7 @@ in
           hostNames = [ "git.sr.ht" ];
           publicKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZ+l/lvYmaeOAPeijHL8d4794Am0MOvmXPyvHTtrqvgmvCJB8pen/qkQX2S1fgl9VkMGSNxbp7NF7HmKgs5ajTGV9mB5A5zq+161lcp5+f1qmn3Dp1MWKp/AzejWXKW+dwPBd3kkudDBA1fa3uK6g1gK5nLw3qcuv/V4emX9zv3P2ZNlq9XRvBxGY2KzaCyCXVkL48RVTTJJnYbVdRuq8/jQkDRA8lHvGvKI+jqnljmZi2aIrK9OGT2gkCtfyTw2GvNDV6aZ0bEza7nDLU/I+xmByAOO79R1Uk4EYCvSc1WXDZqhiuO2sZRmVxa0pQSBDn1DB3rpvqPYW+UvKB3SOz";
         };
-      }
-      // genAttrs (attrNames self.nixosConfigurations) (host: {
-        extraHostNames = optionals (host == config.networking.hostName) [ "localhost" ];
-        publicKeyFile = ../../${host}/host-ed25519-sops.pub;
-      });
+      };
 
     startAgent = true;
   };
