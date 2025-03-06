@@ -7,7 +7,6 @@
     ./flatpak.nix
     ./ghostty.nix
     ./mpv.nix
-    ./neovim.nix
     ./shell
     ./sops.nix
     ./xdg.nix
