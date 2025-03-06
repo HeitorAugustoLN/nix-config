@@ -26,7 +26,7 @@ in
       language = [
         {
           name = "nix";
-          language-servers = [ "nixd" ];
+          language-servers = singleton "nixd";
         }
         {
           auto-format = true;
@@ -68,11 +68,11 @@ in
     };
 
     settings.editor = {
-      bufferline = true;
+      bufferline = "multiple";
       color-modes = true;
       cursorline = true;
       indent-guides.render = true;
-      line-number = true;
+      line-number = "relative";
       lsp.display-inlay-hints = true;
     };
   };
