@@ -74,6 +74,12 @@ in
       indent-guides.render = true;
       line-number = "relative";
       lsp.display-inlay-hints = true;
+
+      statusline.mode = {
+        normal = "NORMAL";
+        insert = "INSERT";
+        select = "SELECT";
+      };
     };
   };
 }
