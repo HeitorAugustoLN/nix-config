@@ -64,7 +64,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-fish4.url = "github:NixOS/nixpkgs/nixos-unstable-small";
 
     nur = {
       url = "github:nix-community/NUR";
