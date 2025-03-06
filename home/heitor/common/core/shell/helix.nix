@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (lib) getExe;
+  inherit (lib) getExe' singleton;
 in
 {
   catppuccin.helix.enable = true;
@@ -33,14 +33,15 @@ in
           name = "scheme";
 
           formatter = {
-            command = getExe pkgs.racket-minimal;
+            command = getExe' pkgs.racket-minimal "raco";
+
             args = [
               "fmt"
               "-i"
             ];
           };
 
-          language-servers = [ "steel-language-server" ];
+          language-servers = singleton "steel-language-server";
         }
       ];
 
