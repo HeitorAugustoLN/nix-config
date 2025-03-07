@@ -9,6 +9,7 @@
 
     cosmic-manager = {
       url = "github:HeitorAugustoLN/cosmic-manager";
+
       inputs = {
         flake-parts.follows = "flake-parts";
         home-manager.follows = "home-manager";
@@ -30,6 +31,7 @@
 
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
+
       inputs = {
         flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs";
@@ -43,8 +45,14 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
+
       inputs = {
         flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs";
@@ -56,6 +64,7 @@
 
     nur = {
       url = "github:nix-community/NUR";
+
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
