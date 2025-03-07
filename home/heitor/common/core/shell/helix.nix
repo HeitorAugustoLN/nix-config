@@ -48,19 +48,23 @@ in
       language-server = {
         nixd = {
           command = "nixd";
-          config = {
-            formatting.command = "nixfmt";
+          config =
+            let
+              flake = ''(builtins.getFlake "${self}")'';
+            in
+            {
+              formatting.command = "nixfmt";
+              nixpkgs.expr = "import ${flake}.inputs.nixpkgs { }";
 
-            options =
-              let
-                flake = ''(builtins.getFlake "${self}")'';
-                nixos.expr = "${flake}.nixosConfigurations.axolotl.options";
-              in
-              {
-                inherit nixos;
-                home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
-              };
-          };
+              options =
+                let
+                  nixos.expr = "${flake}.nixosConfigurations.axolotl.options";
+                in
+                {
+                  inherit nixos;
+                  home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
+                };
+            };
         };
 
         steel-language-server.command = "steel-language-server";
