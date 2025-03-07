@@ -20,7 +20,7 @@ adjustments for my use.
 - `.sops.yaml`: Configuration for `sops` and `sops-nix`.
 - `shell.nix`: devShell configuration.
 - `flake.nix`: Entrypoint for hosts and home configurations. Also exposes a
-  devShell for boostrapping (`nix develop` or `nix-shell`).
+  devShell for bootstrapping (`nix develop` or `nix-shell`).
 - `home/`: Home environment configurations.
 - `hosts/`: Host-specific configurations.
 - `modules/`: NixOS and home-manager modules, that I haven't upstreamed yet.
