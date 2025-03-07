@@ -3,7 +3,7 @@
     enable = true;
 
     extraConfig = {
-      core.editor = "nvim";
+      core.editor = "hx";
       init.defaultBranch = "main";
     };
 
