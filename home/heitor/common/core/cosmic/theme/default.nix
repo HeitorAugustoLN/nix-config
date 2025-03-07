@@ -6,7 +6,7 @@
 }:
 let
   inherit (builtins) readFile;
-  inherit (cosmicLib.cosmic) fromRON mkRon;
+  inherit (cosmicLib.cosmic) fromRON mkRON;
 in
 {
   home.packages = with pkgs; [
@@ -31,16 +31,16 @@ in
 
       interface_font = {
         family = "Inter";
-        stretch = mkRon "enum" "Normal";
-        style = mkRon "enum" "Normal";
-        weight = mkRon "enum" "Normal";
+        stretch = mkRON "enum" "Normal";
+        style = mkRON "enum" "Normal";
+        weight = mkRON "enum" "Normal";
       };
 
       monospace_font = {
         family = "JetBrains Mono";
-        stretch = mkRon "enum" "Normal";
-        style = mkRon "enum" "Normal";
-        weight = mkRon "enum" "Normal";
+        stretch = mkRON "enum" "Normal";
+        style = mkRON "enum" "Normal";
+        weight = mkRON "enum" "Normal";
       };
     };
   };

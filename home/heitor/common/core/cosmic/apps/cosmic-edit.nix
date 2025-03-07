@@ -1,13 +1,13 @@
 { cosmicLib, ... }:
 let
-  inherit (cosmicLib.cosmic) mkRon;
+  inherit (cosmicLib.cosmic) mkRON;
 in
 {
   programs.cosmic-edit = {
     enable = true;
 
     settings = {
-      app_theme = mkRon "enum" "System";
+      app_theme = mkRON "enum" "System";
       auto_indent = true;
       find_case_sensitive = false;
       find_use_regex = false;

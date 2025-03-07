@@ -7,7 +7,7 @@
 let
   inherit (builtins) elem;
   inherit (cosmicLib) optionals;
-  inherit (cosmicLib.cosmic) mkRon;
+  inherit (cosmicLib.cosmic) mkRON;
 in
 {
   wayland.desktopManager.cosmic.applets = {
@@ -20,7 +20,7 @@ in
         ++ optionals config.programs.brave.enable [ "Brave-browser" ]
         ++ optionals (elem pkgs.spotify config.home.packages) [ "spotify" ];
 
-      filter_top_levels = mkRon "optional" null;
+      filter_top_levels = mkRON "optional" null;
     };
 
     audio.show_media_controls_in_top_panel = false;

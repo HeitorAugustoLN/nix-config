@@ -1,7 +1,7 @@
 { config, cosmicLib, ... }:
 let
   inherit (cosmicLib) singleton;
-  inherit (cosmicLib.cosmic) mkRon;
+  inherit (cosmicLib.cosmic) mkRON;
 in
 {
   programs.cosmic-files = {
@@ -9,7 +9,7 @@ in
     package = null;
 
     settings = {
-      app_theme = mkRon "enum" "System";
+      app_theme = mkRON "enum" "System";
 
       desktop = {
         grid_spacing = 100;
@@ -20,13 +20,13 @@ in
       };
 
       favorites = [
-        (mkRon "enum" "Home")
-        (mkRon "enum" "Documents")
-        (mkRon "enum" "Downloads")
-        (mkRon "enum" "Music")
-        (mkRon "enum" "Pictures")
-        (mkRon "enum" "Videos")
-        (mkRon "enum" {
+        (mkRON "enum" "Home")
+        (mkRON "enum" "Documents")
+        (mkRON "enum" "Downloads")
+        (mkRON "enum" "Music")
+        (mkRON "enum" "Pictures")
+        (mkRON "enum" "Videos")
+        (mkRON "enum" {
           variant = "Path";
           value = singleton "${config.home.homeDirectory}/Projects";
         })
@@ -43,7 +43,7 @@ in
         };
 
         show_hidden = true;
-        view = mkRon "enum" "List";
+        view = mkRON "enum" "List";
       };
     };
   };
