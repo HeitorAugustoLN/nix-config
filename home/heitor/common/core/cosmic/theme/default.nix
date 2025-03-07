@@ -5,8 +5,7 @@
   ...
 }:
 let
-  inherit (builtins) readFile;
-  inherit (cosmicLib.cosmic) fromRON mkRON;
+  inherit (cosmicLib.cosmic) importRON mkRON;
 in
 {
   home.packages = with pkgs; [
@@ -16,14 +15,10 @@ in
   ];
 
   wayland.desktopManager.cosmic.appearance = {
-    theme =
-      let
-        importRON = path: path |> readFile |> fromRON;
-      in
-      {
-        dark = importRON ./catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-round.ron;
-        mode = "dark";
-      };
+    theme = {
+      dark = importRON ./catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-round.ron;
+      mode = "dark";
+    };
 
     toolkit = {
       apply_theme_global = true;
