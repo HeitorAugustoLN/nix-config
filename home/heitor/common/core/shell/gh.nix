@@ -1,8 +1,12 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   programs.gh = {
     enable = true;
     extensions = [ pkgs.gh-copilot ];
-    settings.git_protocol = "ssh";
+
+    settings = {
+      editor = config.home.sessionVariables.EDITOR;
+      git_protocol = "ssh";
+    };
   };
 }
