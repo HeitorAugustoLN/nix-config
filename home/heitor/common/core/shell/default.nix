@@ -6,6 +6,7 @@
     ./fish.nix
     ./gh.nix
     ./git.nix
+    ./gpg.nix
     ./helix.nix
     ./nix.nix
     ./starship.nix

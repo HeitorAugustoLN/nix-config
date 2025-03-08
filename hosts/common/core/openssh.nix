@@ -20,6 +20,10 @@
   };
 
   programs.ssh = {
+    extraConfig = ''
+      AddKeysToAgent yes
+    '';
+
     knownHosts =
       let
         cfg = config.programs.ssh.knownHosts;
