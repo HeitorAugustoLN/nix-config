@@ -21,15 +21,6 @@
             };
           };
 
-          swap = {
-            size = "4G";
-
-            content = {
-              type = "swap";
-              discardPolicy = "both";
-            };
-          };
-
           root = {
             size = "100%";
 
