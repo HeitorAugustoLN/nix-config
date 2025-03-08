@@ -1,31 +1,25 @@
-{
-  config,
-  cosmicLib,
-  pkgs,
-  ...
-}:
+{ cosmicLib, ... }:
 let
-  inherit (builtins) elem;
-  inherit (cosmicLib) optionals;
   inherit (cosmicLib.cosmic) mkRON;
 in
 {
   wayland.desktopManager.cosmic.applets = {
-    app-list = {
+    app-list.settings = {
       enable_drag_source = false;
 
-      favorites =
-        [ "com.system76.CosmicFiles" ]
-        ++ optionals config.programs.ghostty.enable [ "com.mitchellh.ghostty" ]
-        ++ optionals config.programs.brave.enable [ "Brave-browser" ]
-        ++ optionals (elem pkgs.spotify config.home.packages) [ "spotify" ];
+      favorites = [
+        "com.system76.CosmicFiles"
+        "com.mitchellh.ghostty"
+        "Brave-browser"
+        "spotify"
+      ];
 
       filter_top_levels = mkRON "optional" null;
     };
 
-    audio.show_media_controls_in_top_panel = false;
+    audio.settings.show_media_controls_in_top_panel = false;
 
-    time = {
+    time.settings = {
       first_day_of_week = 6; # Sunday
       military_time = true;
       show_date_in_top_panel = true;

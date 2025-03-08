@@ -4,6 +4,13 @@
     enable = true;
     ports = [ 1337 ];
 
+    hostKeys = [
+      {
+        type = "ed25519";
+        path = "/etc/ssh/host-ed25519-sops";
+      }
+    ];
+
     settings = {
       PasswordAuthentication = false;
       PermitRootLogin = "no";

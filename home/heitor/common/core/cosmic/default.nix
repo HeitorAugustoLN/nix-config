@@ -5,6 +5,7 @@
 
     ./apps/cosmic-edit.nix
     ./apps/cosmic-files.nix
+    ./applets.nix
     ./compositor.nix
     ./panels.nix
     ./shortcuts.nix
