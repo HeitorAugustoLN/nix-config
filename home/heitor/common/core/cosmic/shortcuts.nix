@@ -1,18 +1,13 @@
 { config, cosmicLib, ... }:
 let
-  inherit (cosmicLib) optionals singleton;
+  inherit (cosmicLib) getExe optionals;
   inherit (cosmicLib.cosmic) mkRON;
 in
 {
-  wayland.desktopManager.cosmic.shortcuts = optionals config.programs.ghostty.enable [
+  wayland.desktopManager.cosmic.systemActions = optionals config.programs.ghostty.enable [
     {
-      action = mkRON "enum" {
-        variant = "Spawn";
-        value = singleton "ghostty";
-      };
-
-      description = mkRON "optional" "Open Ghostty";
-      key = "Super+T";
+      key = mkRON "enum" "Terminal";
+      value = getExe config.programs.ghostty.package;
     }
   ];
 }
