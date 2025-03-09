@@ -15,11 +15,27 @@ in
     defaultEditor = true;
 
     extraPackages = with pkgs; [
+      lldb
+
+      # Markdown
+      marksman
+
+      # Nix
       nixfmt-rfc-style
       nixd
+
+      # Rust
       rust-analyzer
       rustfmt
+
+      # Scheme
       steel
+
+      # TOML
+      taplo
+
+      zig
+      zls
     ];
 
     languages = {
