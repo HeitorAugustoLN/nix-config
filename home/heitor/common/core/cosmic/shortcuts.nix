@@ -4,10 +4,12 @@ let
   inherit (cosmicLib.cosmic) mkRON;
 in
 {
-  wayland.desktopManager.cosmic.systemActions = optionals config.programs.ghostty.enable [
-    {
-      key = mkRON "enum" "Terminal";
-      value = getExe config.programs.ghostty.package;
-    }
-  ];
+  wayland.desktopManager.cosmic.systemActions = optionals config.programs.ghostty.enable (
+    mkRON "map" [
+      {
+        key = mkRON "enum" "Terminal";
+        value = getExe config.programs.ghostty.package;
+      }
+    ]
+  );
 }
