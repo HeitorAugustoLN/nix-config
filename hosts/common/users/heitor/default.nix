@@ -15,7 +15,7 @@ in
     ../../../../home/heitor/common/core
   ] ++ attrValues self.homeManagerModules;
 
-  sops.secrets.heitor-password = {
+  sops.secrets."heitor/password" = {
     neededForUsers = true;
     sopsFile = ../../../../secrets/hosts/common/default.yaml;
   };
@@ -33,12 +33,12 @@ in
         ];
 
         group = "users";
-        hashedPasswordFile = config.sops.secrets.heitor-password.path;
+        hashedPasswordFile = config.sops.secrets."heitor/password".path;
         isNormalUser = true;
         shell = pkgs.fish;
       };
 
-      root.hashedPasswordFile = mkDefault config.sops.secrets.heitor-password.path;
+      root.hashedPasswordFile = mkDefault config.sops.secrets."heitor/password".path;
     };
   };
 }

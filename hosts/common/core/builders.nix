@@ -5,7 +5,7 @@
       let
         common = {
           protocol = "ssh-ng";
-          sshKey = "${config.users.users.heitor.home}/.ssh/id-ed25519";
+          sshKey = config.sops.secrets."heitor/nixos-builders-key".path;
           sshUser = "heitor";
 
           supportedFeatures = [
@@ -42,6 +42,7 @@
           hostName = "darwin-build-box.nix-community.org";
           maxJobs = 4;
           publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUtNSGhsY243ZlVwVXVpT0ZlSWhEcUJ6Qk5Gc2JOcXErTnB6dUdYM2U2enYgCg==";
+          sshKey = config.sops.secrets."heitor/darwin-builders-key".path;
           supportedFeatures = [ "big-parallel" ];
 
           systems = [
@@ -52,5 +53,10 @@
       ];
 
     distributedBuilds = true;
+  };
+
+  sops.secrets = {
+    "heitor/nixos-builders-key".sopsFile = ../../../secrets/hosts/common/default.yaml;
+    "heitor/darwin-builders-key".sopsFile = ../../../secrets/hosts/common/default.yaml;
   };
 }
