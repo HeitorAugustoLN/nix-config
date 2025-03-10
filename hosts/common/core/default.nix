@@ -14,6 +14,7 @@ in
   imports = [
     inputs.home-manager.nixosModules.home-manager
 
+    ./builders.nix
     ./catppuccin.nix
     ./console.nix
     ./cosmic.nix
