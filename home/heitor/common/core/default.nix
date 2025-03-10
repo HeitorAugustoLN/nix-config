@@ -9,6 +9,7 @@
     ./mpv.nix
     ./shell
     ./sops.nix
+    ./ssh.nix
     ./xdg.nix
   ];
 

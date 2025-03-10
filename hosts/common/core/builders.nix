@@ -1,7 +1,4 @@
-{ config, lib, ... }:
-let
-  inherit (lib) recursiveUpdate singleton;
-in
+{ config, ... }:
 {
   nix = {
     buildMachines =
@@ -10,13 +7,6 @@ in
           protocol = "ssh-ng";
           sshKey = "${config.users.users.heitor.home}/.ssh/id-ed25519";
           sshUser = "heitor";
-        };
-      in
-      map (builder: recursiveUpdate common builder) [
-        {
-          hostName = "build-box.nix-community.org";
-          maxJobs = 8;
-          publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUVsSVE1NHFBeTdEaDYzckJ1ZFlLZGJ6SkhycmJyck1YTFlsN1BrbWs4OEgK";
 
           supportedFeatures = [
             "benchmark"
@@ -24,6 +14,13 @@ in
             "kvm"
             "nixos-test"
           ];
+        };
+      in
+      map (builder: common // builder) [
+        {
+          hostName = "build-box.nix-community.org";
+          maxJobs = 8;
+          publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUVsSVE1NHFBeTdEaDYzckJ1ZFlLZGJ6SkhycmJyck1YTFlsN1BrbWs4OEgK";
 
           systems = [
             "i686-linux"
@@ -36,13 +33,6 @@ in
           maxJobs = 16;
           publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUc5dXlmaHlsaStCUnRrNjR5K25pcXRiK3NLcXVSR0daODdmNFlSYzhFRTEK";
 
-          supportedFeatures = [
-            "benchmark"
-            "big-parallel"
-            "kvm"
-            "nixos-test"
-          ];
-
           systems = [
             "aarch64-linux"
             "armv7l-linux"
@@ -52,7 +42,7 @@ in
           hostName = "darwin-build-box.nix-community.org";
           maxJobs = 4;
           publicHostKey = "c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUtNSGhsY243ZlVwVXVpT0ZlSWhEcUJ6Qk5Gc2JOcXErTnB6dUdYM2U2enYgCg==";
-          supportedFeatures = singleton "big-parallel";
+          supportedFeatures = [ "big-parallel" ];
 
           systems = [
             "aarch64-darwin"
