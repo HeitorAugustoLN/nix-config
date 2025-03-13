@@ -24,6 +24,7 @@ jobs:
             extra-substituters = https://cosmic.cachix.org
             extra-trusted-public-keys = cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=
       - name: Check flake
+        run: nix flake check
 
   build-hosts:
     name: Build NixOS configurations
@@ -47,4 +48,4 @@ jobs:
           nix build .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel \
             --no-link \
             --keep-going \
-            --print-build-logs \
+            --print-build-logs
