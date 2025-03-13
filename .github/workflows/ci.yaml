@@ -21,6 +21,8 @@ jobs:
         with:
           extra-conf: |
             extra-experimental-features = pipe-operators
+            extra-substituters = https://cosmic.cachix.org
+            extra-trusted-public-keys = cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=
       - name: Check flake
 
   build-hosts:
@@ -38,6 +40,8 @@ jobs:
         with:
           extra-conf: |
             extra-experimental-features = pipe-operators
+            extra-substituters = https://cosmic.cachix.org
+            extra-trusted-public-keys = cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=
       - name: Build NixOS configuration for ${{ matrix.host }}
         run: |
           nix build .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel \
