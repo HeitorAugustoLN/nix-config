@@ -43,6 +43,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim = {
+      url = "github:HeitorAugustoLN/nvim-config";
+
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        flake-parts.follows = "flake-parts";
+        git-hooks.follows = "git-hooks";
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     nix-index-database = {
