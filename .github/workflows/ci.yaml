@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v16
       - name: Check flake
@@ -30,7 +30,7 @@ jobs:
           - axolotl
     steps:
       - name: Checkout
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v16
       - name: Build NixOS configuration for ${{ matrix.host }}
