@@ -56,7 +56,18 @@
   };
 
   sops.secrets = {
-    "heitor/nixos-builders-key".sopsFile = ../../../secrets/hosts/common/default.yaml;
-    "heitor/darwin-builders-key".sopsFile = ../../../secrets/hosts/common/default.yaml;
+    "heitor/nixos-builders-key" = {
+      inherit (config.users.users.heitor) group;
+      mode = "0400";
+      owner = config.users.users.heitor.name;
+      sopsFile = ../../../secrets/hosts/common/default.yaml;
+    };
+
+    "heitor/darwin-builders-key" = {
+      inherit (config.users.users.heitor) group;
+      mode = "0400";
+      owner = config.users.users.heitor.name;
+      sopsFile = ../../../secrets/hosts/common/default.yaml;
+    };
   };
 }
