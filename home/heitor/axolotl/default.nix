@@ -36,8 +36,7 @@ in
 
         source = mkRON "enum" {
           variant = "Path";
-          value =
-            inputs.wallpapers.desktop.by-theme.catppuccin.mocha.digital-art.eclipse |> toString |> singleton;
+          value = singleton inputs.wallpapers.desktop.by-theme.catppuccin.mocha.digital-art.eclipse;
         };
       }
     ];
