@@ -7,7 +7,7 @@
     ./gh.nix
     ./git.nix
     ./gpg.nix
-    ./neovim.nix
+    ./helix.nix
     ./nix.nix
     ./starship.nix
     ./zoxide.nix
