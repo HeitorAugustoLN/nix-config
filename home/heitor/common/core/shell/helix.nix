@@ -17,6 +17,9 @@ in
     extraPackages = with pkgs; [
       lldb
 
+      # GDScript
+      gdtoolkit_4
+
       # Markdown
       marksman
 
