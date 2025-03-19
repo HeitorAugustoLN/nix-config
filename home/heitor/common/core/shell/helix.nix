@@ -17,6 +17,10 @@ in
     extraPackages = with pkgs; [
       lldb
 
+      # C#
+      netcoredbg
+      omnisharp-roslyn
+
       # GDScript
       gdtoolkit_4
 
