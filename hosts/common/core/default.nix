@@ -28,6 +28,7 @@ in
     ./pipewire.nix
     ./security.nix
     ./sops.nix
+    ./steam.nix
     ./stevenblack.nix
     ./systemd-boot.nix
     ./xdg.nix
