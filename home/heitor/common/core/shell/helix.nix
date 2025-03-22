@@ -1,4 +1,5 @@
 {
+  inputs',
   lib,
   pkgs,
   self,
@@ -13,6 +14,7 @@ in
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    package = inputs'.helix.packages.helix;
 
     extraPackages = with pkgs; [
       # Clipboard provider
