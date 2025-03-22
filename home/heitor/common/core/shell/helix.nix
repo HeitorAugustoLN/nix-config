@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (lib) getExe' singleton;
+  inherit (lib) getExe';
 in
 {
   catppuccin.helix.enable = true;
@@ -15,21 +15,25 @@ in
     defaultEditor = true;
 
     extraPackages = with pkgs; [
-      lldb
+      # Clipboard provider
+      wl-clipboard-rs
 
-      # C#
-      netcoredbg
-      omnisharp-roslyn
+      # Debugger for many languages (C, C++, Rust, Zig, etc.)
+      lldb
 
       # GDScript
       gdtoolkit_4
+
+      # Lua
+      lua-language-server
+      stylua
 
       # Markdown
       marksman
 
       # Nix
-      nixfmt-rfc-style
       nixd
+      nixfmt-rfc-style
 
       # Rust
       rust-analyzer
@@ -41,6 +45,7 @@ in
       # TOML
       taplo
 
+      # Zig
       zig
       zls
     ];
@@ -48,8 +53,22 @@ in
     languages = {
       language = [
         {
+          name = "lua";
+
+          formatter = {
+            command = "stylua";
+            args = [
+              "--search-parent-directories"
+              "--respect-ignores"
+              "-"
+            ];
+          };
+
+          language-servers = [ "lua-language-server" ];
+        }
+        {
           name = "nix";
-          language-servers = singleton "nixd";
+          language-servers = [ "nixd" ];
         }
         {
           auto-format = true;
@@ -64,7 +83,7 @@ in
             ];
           };
 
-          language-servers = singleton "steel-language-server";
+          language-servers = [ "steel-language-server" ];
         }
       ];
 
@@ -96,17 +115,12 @@ in
 
     settings.editor = {
       bufferline = "multiple";
+      clipboard-provider = "wayland";
       color-modes = true;
       cursorline = true;
       indent-guides.render = true;
       line-number = "relative";
       lsp.display-inlay-hints = true;
-
-      statusline.mode = {
-        normal = "NORMAL";
-        insert = "INSERT";
-        select = "SELECT";
-      };
     };
   };
 }

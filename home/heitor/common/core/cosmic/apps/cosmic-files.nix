@@ -1,6 +1,5 @@
 { config, cosmicLib, ... }:
 let
-  inherit (cosmicLib) singleton;
   inherit (cosmicLib.cosmic) mkRON;
 in
 {
@@ -28,7 +27,7 @@ in
         (mkRON "enum" "Videos")
         (mkRON "enum" {
           variant = "Path";
-          value = singleton "${config.home.homeDirectory}/Projects";
+          value = [ "${config.home.homeDirectory}/Projects" ];
         })
       ];
 

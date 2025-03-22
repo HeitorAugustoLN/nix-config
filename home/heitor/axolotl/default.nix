@@ -5,7 +5,6 @@
   ...
 }:
 let
-  inherit (cosmicLib) singleton;
   inherit (cosmicLib.cosmic) mkRON;
 in
 {
@@ -36,7 +35,7 @@ in
 
         source = mkRON "enum" {
           variant = "Path";
-          value = singleton inputs.wallpapers.desktop.by-theme.catppuccin.mocha.digital-art.eclipse;
+          value = [ inputs.wallpapers.desktop.by-theme.catppuccin.mocha.digital-art.eclipse ];
         };
       }
     ];

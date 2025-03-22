@@ -1,7 +1,4 @@
-{ lib, pkgs, ... }:
-let
-  inherit (lib) singleton;
-in
+{ pkgs, ... }:
 {
   services.gpg-agent = {
     enable = true;
@@ -11,9 +8,11 @@ in
   programs.gpg = {
     enable = true;
 
-    publicKeys = singleton {
-      source = ../../../pgp.asc;
-      trust = 5;
-    };
+    publicKeys = [
+      {
+        source = ../../../pgp.asc;
+        trust = 5;
+      }
+    ];
   };
 }
