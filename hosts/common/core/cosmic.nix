@@ -2,12 +2,16 @@
 {
   imports = [ inputs.nixos-cosmic.nixosModules.default ];
 
-  environment.cosmic.excludePackages = with pkgs; [
-    cosmic-edit
-    cosmic-player
-    cosmic-store
-    cosmic-term
-  ];
+  environment = {
+    sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
+
+    cosmic.excludePackages = with pkgs; [
+      cosmic-edit
+      cosmic-player
+      cosmic-store
+      cosmic-term
+    ];
+  };
 
   networking.networkmanager.enable = true;
 

@@ -117,6 +117,7 @@ in
 
     settings.editor = {
       bufferline = "multiple";
+      clipboard-provider = "wayland";
       color-modes = true;
       cursorline = true;
       indent-guides.render = true;
