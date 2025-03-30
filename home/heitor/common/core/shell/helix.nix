@@ -115,14 +115,18 @@ in
       };
     };
 
-    settings.editor = {
-      bufferline = "multiple";
-      clipboard-provider = "wayland";
-      color-modes = true;
-      cursorline = true;
-      indent-guides.render = true;
-      line-number = "relative";
-      lsp.display-inlay-hints = true;
+    settings = {
+      editor = {
+        bufferline = "multiple";
+        clipboard-provider = "wayland";
+        color-modes = true;
+        cursorline = true;
+        indent-guides.render = true;
+        line-number = "relative";
+        lsp.display-inlay-hints = true;
+      };
+
+      keys.normal."'" = "switch_to_uppercase";
     };
   };
 }
