@@ -24,6 +24,7 @@ in
       lldb
 
       # GDScript
+      netcat # For getting LSP in localhost
       gdtoolkit_4
 
       # Lua
@@ -54,6 +55,10 @@ in
 
     languages = {
       language = [
+        {
+          name = "gdscript";
+          language-servers = [ "godot" ];
+        }
         {
           name = "lua";
 
@@ -90,6 +95,14 @@ in
       ];
 
       language-server = {
+        godot = {
+          command = "nc";
+          args = [
+            "127.0.0.1"
+            "6005"
+          ];
+        };
+
         nixd = {
           command = "nixd";
           config =
