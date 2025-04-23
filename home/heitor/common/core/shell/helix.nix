@@ -49,7 +49,7 @@ in
 
       # Python
       ruff
-      python3Packages.python-language-server
+      pyright
 
       # Rust
       rust-analyzer
@@ -107,6 +107,14 @@ in
           ];
         }
         {
+          name = "python";
+          language-servers = [
+            "pyright"
+            "ruff"
+            "harper-ls"
+          ];
+        }
+        {
           auto-format = true;
           name = "scheme";
 
@@ -133,11 +141,6 @@ in
             "127.0.0.1"
             "6005"
           ];
-        };
-
-        harper = {
-          command = "harper-ls";
-          args = [ "--stdio" ];
         };
 
         nixd = {
@@ -168,7 +171,6 @@ in
     settings = {
       editor = {
         bufferline = "multiple";
-        clipboard-provider = "wayland";
         color-modes = true;
         cursorline = true;
         indent-guides.render = true;
