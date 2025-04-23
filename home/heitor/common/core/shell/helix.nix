@@ -139,7 +139,7 @@ in
         lsp.display-inlay-hints = true;
       };
 
-      keys.normal."'" = "switch_to_uppercase";
+      keys.normal."´" = "switch_to_uppercase";
     };
   };
 }
