@@ -20,8 +20,17 @@ in
       # Clipboard provider
       wl-clipboard-rs
 
+      # Grammar & Spell checker
+      harper
+
       # Debugger for many languages (C, C++, Rust, Zig, etc.)
       lldb
+
+      # CSS, HTML, JSON, SCSS
+      vscode-langservers-extracted
+
+      # JavaScript, Typescript
+      typescript-language-server
 
       # GDScript
       netcat # For getting LSP in localhost
@@ -37,6 +46,10 @@ in
       # Nix
       nixd
       nixfmt-rfc-style
+
+      # Python
+      ruff
+      python3Packages.python-language-server
 
       # Rust
       rust-analyzer
@@ -57,7 +70,10 @@ in
       language = [
         {
           name = "gdscript";
-          language-servers = [ "godot" ];
+          language-servers = [
+            "godot"
+            "harper-ls"
+          ];
         }
         {
           name = "lua";
@@ -71,11 +87,24 @@ in
             ];
           };
 
-          language-servers = [ "lua-language-server" ];
+          language-servers = [
+            "lua-language-server"
+            "harper-ls"
+          ];
+        }
+        {
+          name = "markdown";
+          language-servers = [
+            "marksman"
+            "harper-ls"
+          ];
         }
         {
           name = "nix";
-          language-servers = [ "nixd" ];
+          language-servers = [
+            "nixd"
+            "harper-ls"
+          ];
         }
         {
           auto-format = true;
@@ -90,7 +119,10 @@ in
             ];
           };
 
-          language-servers = [ "steel-language-server" ];
+          language-servers = [
+            "steel-language-server"
+            "harper-ls"
+          ];
         }
       ];
 
@@ -101,6 +133,11 @@ in
             "127.0.0.1"
             "6005"
           ];
+        };
+
+        harper = {
+          command = "harper-ls";
+          args = [ "--stdio" ];
         };
 
         nixd = {
