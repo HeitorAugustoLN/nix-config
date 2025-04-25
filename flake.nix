@@ -55,15 +55,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-
-      inputs = {
-        flake-compat.follows = "flake-compat";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
