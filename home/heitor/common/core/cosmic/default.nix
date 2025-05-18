@@ -14,6 +14,6 @@
 
   wayland.desktopManager.cosmic = {
     enable = true;
-    resetFiles = true;
+    resetFiles = false;
   };
 }
