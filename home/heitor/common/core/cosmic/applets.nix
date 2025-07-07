@@ -10,7 +10,7 @@ in
       favorites = [
         "com.system76.CosmicFiles"
         "com.mitchellh.ghostty"
-        "Brave-browser"
+        "firefox"
         "spotify"
       ];
 

@@ -1,7 +1,7 @@
 { config, ... }:
 {
   imports = [
-    ./brave.nix
+    ./zen.nix
     ./catppuccin.nix
     ./cosmic
     ./flatpak.nix
