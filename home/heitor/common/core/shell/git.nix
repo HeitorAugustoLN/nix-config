@@ -1,8 +1,7 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 {
   programs.git = {
     enable = true;
-    package = pkgs.gitMinimal;
 
     extraConfig = {
       color.ui = true;
