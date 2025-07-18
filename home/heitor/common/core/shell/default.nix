@@ -8,6 +8,7 @@
     ./git.nix
     ./gpg.nix
     ./helix.nix
+    ./jj.nix
     ./nix.nix
     ./starship.nix
     ./zoxide.nix
