@@ -1,0 +1,29 @@
+name: "Update flake"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1' # Runs weekly on monday at 00:00
+
+jobs:
+  update-flake:
+    name: Update flake
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v19
+      - name: Update flake.lock
+        uses: DeterminateSystems/update-flake-lock@v27
+        with:
+          commit-msg: "chore(deps): update flake.lock"
+          pr-assignees: HeitorAugustoLN
+          pr-labels: dependencies
+          pr-reviewers: HeitorAugustoLN
+          pr-title: "chore(deps): update flake.lock"
+          # Wait for DeterminateSystems/update-flake-lock#200
+          # sign-commits: true
