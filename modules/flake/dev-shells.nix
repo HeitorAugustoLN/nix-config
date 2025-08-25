@@ -3,7 +3,12 @@
     { config, pkgs, ... }:
     {
       devShells.default = pkgs.mkShell {
-        packages = [ pkgs.sops ];
+        packages = [
+          pkgs.nixos-facter
+          pkgs.nodejs
+          pkgs.sops
+        ];
+
         shellHook = config.pre-commit.installationScript;
       };
     };

@@ -4,6 +4,13 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
+    catppuccin = {
+      type = "github";
+      owner = "catppuccin";
+      repo = "nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       type = "github";
       owner = "nix-community";
@@ -35,10 +42,39 @@
       };
     };
 
+    home-manager = {
+      type = "github";
+      owner = "nix-community";
+      repo = "home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     import-tree = {
       type = "github";
       owner = "vic";
       repo = "import-tree";
+    };
+
+    neovim = {
+      type = "github";
+      owner = "HeitorAugustoLN";
+      repo = "nvim-config";
+
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        flake-parts.follows = "flake-parts";
+        git-hooks.follows = "git-hooks";
+        import-tree.follows = "import-tree";
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
+    nixos-facter-modules = {
+      type = "github";
+      owner = "nix-community";
+      repo = "nixos-facter-modules";
     };
 
     nixpkgs = {
@@ -77,6 +113,17 @@
       owner = "numtide";
       repo = "treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    unify = {
+      type = "git";
+      url = "https://codeberg.org/quasigod/unify";
+
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
   };
 }
