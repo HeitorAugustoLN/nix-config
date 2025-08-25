@@ -15,8 +15,8 @@
         };
 
         nixfmt.enable = true;
+        prettier.enable = true;
         statix.enable = true;
-        yamlfmt.enable = true;
       };
     };
 }
