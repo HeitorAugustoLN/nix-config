@@ -1,25 +1,32 @@
 { config, ... }:
+let
+  shared = builtins.attrValues {
+    inherit (config.unify.modules)
+      gnome
+      heitor
+      protonvpn
+      ;
+  };
+in
 {
   unify.hosts.nixos.axolotl = {
-    modules = builtins.attrValues {
-      inherit (config.unify.modules)
-        builders
-        disko
-        facter
-        gnome
-        heitor
-        protonvpn
-        ;
-    };
+    modules =
+      shared
+      ++ builtins.attrValues {
+        inherit (config.unify.modules)
+          builders
+          disko
+          facter
+          ;
+      };
 
-    users.heitor.modules = builtins.attrValues {
-      inherit (config.unify.modules)
-        gnome
-        heitor
-        "heitor.ghostty"
-        "heitor.neovim"
-        protonvpn
-        ;
-    };
+    users.heitor.modules =
+      shared
+      ++ builtins.attrValues {
+        inherit (config.unify.modules)
+          "heitor.ghostty"
+          "heitor.neovim"
+          ;
+      };
   };
 }
