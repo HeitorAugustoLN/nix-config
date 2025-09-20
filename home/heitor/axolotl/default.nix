@@ -9,11 +9,7 @@ let
 in
 {
   home = {
-    packages = with pkgs; [
-      spotify
-      stremio
-    ];
-
+    packages = with pkgs; [ spotify ];
     stateVersion = "25.11";
   };
 
