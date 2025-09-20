@@ -16,7 +16,7 @@ in
 
     extraPackages = with pkgs; [
       # Clipboard provider
-      wl-clipboard-rs
+      wl-clipboard
 
       # Grammar & Spell checker
       harper

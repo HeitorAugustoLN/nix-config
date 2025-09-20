@@ -12,5 +12,9 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
   ];
 
-  system.stateVersion = "25.05";
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  networking.firewall.checkReversePath = false;
+
+  system.stateVersion = "25.11";
 }
