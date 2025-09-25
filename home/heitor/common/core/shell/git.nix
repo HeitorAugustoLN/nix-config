@@ -15,7 +15,17 @@
       signByDefault = true;
     };
 
-    userEmail = "IAm.HeitorALN@proton.me";
+    includes = [
+      {
+        condition = "hasconfig:remote.*.url:*github.com*";
+        contents.user.email = "44377258+HeitorAugustoLN@users.noreply.github.com";
+      }
+      {
+        condition = "hasconfig:remote.*.url:*codeberg.org*";
+        contents.user.email = "heitor@noreply.codeberg.org";
+      }
+    ];
+
     userName = "Heitor Augusto";
   };
 }

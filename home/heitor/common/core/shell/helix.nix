@@ -168,6 +168,7 @@ in
 
     settings = {
       editor = {
+        auto-pairs = false;
         bufferline = "multiple";
         color-modes = true;
         cursorline = true;
