@@ -176,7 +176,27 @@ in
         lsp.display-inlay-hints = true;
       };
 
-      keys.normal."´" = "switch_to_uppercase";
+      keys = {
+        normal = {
+          "´" = "switch_to_uppercase";
+          A-b = "move_prev_sub_word_start";
+          A-e = "move_next_sub_word_end";
+          A-h = "move_parent_node_start";
+          A-l = "move_parent_node_end";
+          A-w = "move_next_sub_word_start";
+          X = "extend_line_above";
+        };
+
+        select = {
+          "´" = "switch_to_uppercase";
+          A-b = "extend_prev_sub_word_start";
+          A-e = "extend_next_sub_word_end";
+          A-h = "extend_parent_node_start";
+          A-l = "extend_parent_node_end";
+          A-w = "extend_next_sub_word_start";
+          X = "extend_line_above";
+        };
+      };
     };
   };
 }
