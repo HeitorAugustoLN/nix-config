@@ -50,11 +50,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759085639,
-        "narHash": "sha256-kqSZm1bgs2cSsZjOQ2d2wapsh2LwN0uhZWq64s3BDjs=",
+        "lastModified": 1759086440,
+        "narHash": "sha256-sOdT/M8qoyts95dCN/f2+kLu94zEgfg5r7teRqoJv3c=",
         "owner": "HeitorAugustoLN",
         "repo": "axon",
-        "rev": "59fd96825672835555000bcec860186e02bdb3d2",
+        "rev": "fd59662e2d4ea716a82e0deffdcbac7500e5d4a2",
         "type": "github"
       },
       "original": {
