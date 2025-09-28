@@ -11,7 +11,7 @@
 
     signing = {
       format = "openpgp";
-      key = "53C04F8F46A1A344";
+      key = "3EEC05B0024AF8A4";
       signByDefault = true;
     };
 

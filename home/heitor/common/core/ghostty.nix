@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   catppuccin.ghostty.enable = true;
-  home.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+  home.packages = [ pkgs.nerd-fonts.commit-mono ];
 
   programs.ghostty = {
     enable = true;
@@ -10,7 +10,7 @@
     enableZshIntegration = config.programs.zsh.enable;
 
     settings = {
-      font-family = "JetBrainsMono Nerd Font";
+      font-family = "CommitMono Nerd Font";
       font-size = 13;
       mouse-hide-while-typing = true;
       window-theme = "ghostty";

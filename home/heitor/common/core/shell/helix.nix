@@ -1,12 +1,4 @@
-{
-  lib,
-  pkgs,
-  self,
-  ...
-}:
-let
-  inherit (lib) getExe';
-in
+{ pkgs, ... }:
 {
   catppuccin.helix.enable = true;
 
@@ -15,154 +7,33 @@ in
     defaultEditor = true;
 
     extraPackages = with pkgs; [
-      # Clipboard provider
-      wl-clipboard
-
-      # Grammar & Spell checker
-      harper
-
-      # Debugger for many languages (C, C++, Rust, Zig, etc.)
-      lldb
-
-      # CSS, HTML, JSON, SCSS
-      vscode-langservers-extracted
-
-      # JavaScript, Typescript
-      typescript-language-server
-
-      # GDScript
-      netcat # For getting LSP in localhost
+      wl-clipboard-rs
+      netcat
       gdtoolkit_4
-
-      # Lua
-      lua-language-server
-      stylua
-
-      # Markdown
-      marksman
-
-      # Nix
       nixd
-      nixfmt-rfc-style
-
-      # Python
-      ruff
-      pyright
-
-      # Rust
+      nixfmt
       rust-analyzer
       rustfmt
-
-      # Scheme
-      steel
-
-      # TOML
-      taplo
-
-      # Zig
-      zig
-      zls
+      omnisharp-roslyn
     ];
 
     languages = {
       language = [
         {
           name = "gdscript";
-          language-servers = [
-            "godot"
-            "harper-ls"
-          ];
-        }
-        {
-          name = "lua";
-
-          formatter = {
-            command = "stylua";
-            args = [
-              "--search-parent-directories"
-              "--respect-ignores"
-              "-"
-            ];
-          };
-
-          language-servers = [
-            "lua-language-server"
-            "harper-ls"
-          ];
-        }
-        {
-          name = "markdown";
-          language-servers = [
-            "marksman"
-            "harper-ls"
-          ];
-        }
-        {
-          name = "nix";
-          language-servers = [
-            "nixd"
-            "harper-ls"
-          ];
-        }
-        {
-          name = "python";
-          language-servers = [
-            "pyright"
-            "ruff"
-            "harper-ls"
-          ];
-        }
-        {
-          auto-format = true;
-          name = "scheme";
-
-          formatter = {
-            command = getExe' pkgs.racket-minimal "raco";
-
-            args = [
-              "fmt"
-              "-i"
-            ];
-          };
-
-          language-servers = [
-            "steel-language-server"
-            "harper-ls"
-          ];
+          language-servers = [ "godot" ];
         }
       ];
 
       language-server = {
         godot = {
-          command = "nc";
           args = [
             "127.0.0.1"
             "6005"
           ];
+
+          command = "nc";
         };
-
-        nixd = {
-          command = "nixd";
-          config =
-            let
-              flake = ''(builtins.getFlake "${self}")'';
-            in
-            {
-              formatting.command = "nixfmt";
-              nixpkgs.expr = "import ${flake}.inputs.nixpkgs { }";
-
-              options =
-                let
-                  nixos.expr = "${flake}.nixosConfigurations.axolotl.options";
-                in
-                {
-                  inherit nixos;
-                  home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions [ ]";
-                };
-            };
-        };
-
-        steel-language-server.command = "steel-language-server";
       };
     };
 
@@ -172,9 +43,21 @@ in
         bufferline = "multiple";
         color-modes = true;
         cursorline = true;
+        end-of-line-diagnostics = "hint";
+        file-picker.hidden = false;
         indent-guides.render = true;
+        inline-diagnostics.cursor-line = "warning";
         line-number = "relative";
         lsp.display-inlay-hints = true;
+        mouse = false;
+
+        rulers = [
+          80
+          120
+        ];
+
+        soft-wrap.enable = true;
+        trim-trailing-whitespace = true;
       };
 
       keys = {
