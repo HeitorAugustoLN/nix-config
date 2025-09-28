@@ -49,7 +49,6 @@
         inline-diagnostics.cursor-line = "warning";
         line-number = "relative";
         lsp.display-inlay-hints = true;
-        mouse = false;
 
         rulers = [
           80
