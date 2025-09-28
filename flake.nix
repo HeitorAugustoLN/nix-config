@@ -98,6 +98,12 @@
       repo = "import-tree";
     };
 
+    nixos-facter-modules = {
+      type = "github";
+      owner = "nix-community";
+      repo = "nixos-facter-modules";
+    };
+
     nixpkgs = {
       type = "github";
       owner = "NixOS";
