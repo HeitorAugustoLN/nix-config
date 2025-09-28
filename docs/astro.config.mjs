@@ -1,18 +1,19 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import catppuccin from "@catppuccin/starlight";
 import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     starlight({
-      title: "My Docs",
-      social: [
-        {
-          icon: "github",
-          label: "GitHub",
-          href: "https://github.com/withastro/starlight",
-        },
+      description:
+        "HeitorAugustoLN's personal Nix configuration flake documentation.",
+      plugins: [
+        catppuccin({
+          dark: { flavor: "mocha", accent: "blue" },
+          light: { flavor: "latte", accent: "blue" },
+        }),
       ],
       sidebar: [
         {
@@ -27,6 +28,14 @@ export default defineConfig({
           autogenerate: { directory: "reference" },
         },
       ],
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/withastro/starlight",
+        },
+      ],
+      title: "Heitor Augusto's Nix configuration",
     }),
   ],
 });
