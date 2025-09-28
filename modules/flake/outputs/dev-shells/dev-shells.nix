@@ -5,6 +5,7 @@
       devShells.default = pkgs.mkShell {
         packages = [
           pkgs.nixos-facter
+          pkgs.nodejs
           pkgs.sops
         ];
 
