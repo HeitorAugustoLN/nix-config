@@ -7,8 +7,7 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
   integrations: [
     starlight({
-      description:
-        "HeitorAugustoLN's personal Nix configuration flake documentation.",
+      description: "Documentation for my personal Nix configuration flake.",
       plugins: [
         catppuccin({
           dark: { flavor: "mocha", accent: "blue" },
@@ -32,10 +31,10 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/withastro/starlight",
+          href: "https://github.com/HeitorAugustoLN/nix-config",
         },
       ],
-      title: "Heitor Augusto's Nix configuration",
+      title: "Heitor's Nix flake",
     }),
   ],
 });
