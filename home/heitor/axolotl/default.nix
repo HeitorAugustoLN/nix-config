@@ -9,11 +9,46 @@ let
 in
 {
   home = {
-    packages = with pkgs; [ spotify ];
+    packages = with pkgs; [
+      spotify
+      amberol
+      fractal
+      newsflash
+      dialect
+      mousai
+      eartag
+      eyedropper
+      fragments
+      # gaphor
+      gnome-podcasts
+      shortwave
+      wike
+      resources
+      gimp
+      godot-mono
+      libresprite
+    ];
     stateVersion = "25.11";
   };
 
+  programs.obs-studio.enable = true;
+
+  # qt = {
+  #   enable = true;
+  # platformTheme.name = "adwaita";
+  # style.name = "adwaita-dark";
+  # };
+
   wayland.desktopManager.cosmic = {
+    # compositor.input_default = {
+    #   scroll_config = mkRON "optional" {
+    #     method = mkRON "optional" (mkRON "enum" "TwoFinger");
+    #     natural_scroll = mkRON "optional" true;
+    #     scroll_button = mkRON "optional" null;
+    #     scroll_factor = mkRON "optional" null;
+    #   };
+    # };
+
     idle = {
       screen_off_time = mkRON "optional" null;
       suspend_on_ac_time = mkRON "optional" null;

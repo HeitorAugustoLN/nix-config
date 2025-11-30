@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.gh = {
     enable = true;
     extensions = [ pkgs.gh-copilot ];
 
     settings = {
-      editor = config.home.sessionVariables.EDITOR;
+      editor = "nvim";
       git_protocol = "ssh";
     };
   };

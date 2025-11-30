@@ -13,6 +13,7 @@ in
       name = "Panel";
       opacity = 1.0;
       output = mkRON "enum" "All";
+      margin = 4;
       plugins_center = mkRON "optional" [ "com.system76.CosmicAppletTime" ];
 
       plugins_wings = mkRON "optional" (
@@ -38,6 +39,7 @@ in
       autohide = mkRON "optional" null;
       background = mkRON "enum" "ThemeDefault";
       expand_to_edges = false;
+      margin = 4;
       name = "Dock";
       opacity = 1.0;
       output = mkRON "enum" "All";

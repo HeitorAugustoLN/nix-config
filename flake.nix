@@ -43,6 +43,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim = {
+      url = "github:HeitorAugustoLN/nvim-config";
+    };
+
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     nix-index-database = {

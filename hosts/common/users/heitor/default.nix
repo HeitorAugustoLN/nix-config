@@ -13,12 +13,17 @@ in
   home-manager.users.heitor.imports = [
     ../../../../home/heitor/${config.networking.hostName}
     ../../../../home/heitor/common/core
-  ] ++ attrValues self.homeManagerModules;
+  ]
+  ++ attrValues self.homeManagerModules;
 
   sops.secrets."heitor/password" = {
     neededForUsers = true;
     sopsFile = ../../../../secrets/hosts/common/default.yaml;
   };
+
+  systemd.tmpfiles.rules = [
+    "L+ /var/lib/AccountsService/icons/heitor - - - - ${./icon.jpg}"
+  ];
 
   users = {
     mutableUsers = false;

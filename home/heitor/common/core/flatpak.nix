@@ -10,6 +10,8 @@
       }
     ];
 
+    packages = [ "com.discordapp.Discord" ];
+
     uninstallUnmanaged = true;
     uninstallUnused = true;
 

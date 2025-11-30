@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ./disk-configuration.nix
@@ -12,9 +12,18 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
   ];
 
+  networking.firewall.checkReversePath = false;
   services.desktopManager.gnome.enable = true;
   services.displayManager.gdm.enable = true;
-  networking.firewall.checkReversePath = false;
+  i18n.inputMethod.enable = true;
+  i18n.inputMethod.type = "ibus";
+
+  environment.systemPackages = [ pkgs.davinci-resolve ];
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = [ pkgs.rocmPackages.clr.icd ];
+  };
 
   system.stateVersion = "25.11";
 }

@@ -1,11 +1,10 @@
-{ config, ... }:
 {
   programs.git = {
     enable = true;
 
     extraConfig = {
       color.ui = true;
-      core.editor = config.home.sessionVariables.EDITOR;
+      core.editor = "nvim";
       init.defaultBranch = "main";
     };
 
