@@ -1,0 +1,67 @@
+---
+name: Update flake inputs
+run-name: Update flake inputs by ${{ github.actor }}
+"on":
+  schedule:
+    - cron: "0 0 */3 * *"  # Every 3 days at midnight UTC
+  workflow_dispatch:
+jobs:
+  update-flake:
+    timeout-minutes: 11
+    name: Update flake inputs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3  # v6
+        with:
+          persist-credentials: false
+      - name: Set up Nix
+        uses: cachix/install-nix-action@0b0e072294b088b73964f1d72dfdac0951439dbd  # v31
+      - name: Generate app token
+        id: app-token
+        uses: actions/create-github-app-token@7e473efe3cb98aa54f8d4bac15400b15fad77d94  # v2
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+      - name: Configure Git
+        run: |
+          git config user.name "heitor-bot[bot]"
+          git config user.email "246902415+heitor-bot[bot]@users.noreply.github.com"
+      - name: Update flake.lock
+        run: |
+          nix flake update --accept-flake-config --commit-lock-file --option commit-lockfile-summary "chore(deps): update flake"
+      - name: Get commit message for PR body
+        id: pr-body
+        run: |
+          COMMIT_BODY=$(git log -1 --pretty=%b)
+          {
+            echo "pr-body<<EOF"
+            echo "### Automated flake update"
+            echo ""
+            echo "\`\`\`"
+            echo "$COMMIT_BODY"
+            echo "\`\`\`"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+      - name: Create Pull Request
+        id: pull-request
+        uses: peter-evans/create-pull-request@84ae59a2cdc2258d6fa0732dd66352dddae2a412  # v7
+        with:
+          body: ${{ steps.pr-body.outputs.pr-body }}
+          branch: update-flake-lock
+          delete-branch: true
+          labels: |
+            dependencies
+            nix
+          sign-commits: true
+          title: "chore(deps): update flake"
+          token: ${{ steps.app-token.outputs.token }}
+      - name: Enable auto-merge
+        if: steps.pull-request.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          PR_URL: ${{ steps.pull-request.outputs.pull-request-url }}
+        run: gh pr merge --auto --squash --delete-branch "$PR_URL"
