@@ -20,6 +20,11 @@
 
   environment.systemPackages = [ pkgs.davinci-resolve ];
 
+  xdg.terminal-exec = {
+    enable = true;
+    settings.default = [ "ghostty.desktop" ];
+  };
+
   hardware.graphics = {
     enable = true;
     extraPackages = [ pkgs.rocmPackages.clr.icd ];
