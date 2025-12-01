@@ -87,6 +87,19 @@
       };
     };
 
+    nix-flatpak = {
+      type = "github";
+      owner = "gmodena";
+      repo = "nix-flatpak";
+    };
+
+    nix-index-database = {
+      type = "github";
+      owner = "nix-community";
+      repo = "nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-facter-modules = {
       type = "github";
       owner = "nix-community";
@@ -98,6 +111,13 @@
       owner = "NixOS";
       repo = "nixpkgs";
       ref = "nixos-unstable";
+    };
+
+    sops-nix = {
+      type = "github";
+      owner = "Mic92";
+      repo = "sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     systems = {
