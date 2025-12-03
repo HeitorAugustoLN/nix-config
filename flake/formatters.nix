@@ -10,7 +10,6 @@
       deno.enable = true;
       nixfmt.enable = true;
       statix.enable = true;
-      typos.enable = true;
     };
 
     projectRootFile = "flake.nix";
