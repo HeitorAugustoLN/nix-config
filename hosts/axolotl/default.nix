@@ -20,6 +20,7 @@
   i18n.inputMethod.type = "ibus";
 
   facter.reportPath = ./facter.json;
+  facter.detected.dhcp.enable = false;
 
   environment.systemPackages = [
     (pkgs.kdePackages.kdenlive.overrideAttrs (oldAttrs: {
