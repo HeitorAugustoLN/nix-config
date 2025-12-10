@@ -33,11 +33,11 @@ in
 
   programs.obs-studio.enable = true;
 
-  # qt = {
-  #   enable = true;
-  # platformTheme.name = "adwaita";
-  # style.name = "adwaita-dark";
-  # };
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style.name = "adwaita-dark";
+  };
 
   wayland.desktopManager.cosmic = {
     # compositor.input_default = {

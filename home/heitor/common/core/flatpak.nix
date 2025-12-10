@@ -10,7 +10,10 @@
       }
     ];
 
-    packages = [ "com.discordapp.Discord" ];
+    packages = [
+      "com.discordapp.Discord"
+      "com.stremio.Stremio"
+    ];
 
     uninstallUnmanaged = true;
     uninstallUnused = true;
