@@ -29,7 +29,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
-    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
+    nixos-facter-modules.url = "github:nix-community/nixos-facter-modules/pull/97/head";
 
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
