@@ -18,7 +18,6 @@ in
     ./catppuccin.nix
     ./console.nix
     ./cosmic.nix
-    ./fish.nix
     ./flatpak.nix
     ./locale.nix
     ./nh.nix

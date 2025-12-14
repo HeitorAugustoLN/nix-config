@@ -40,7 +40,7 @@ in
         group = "users";
         hashedPasswordFile = config.sops.secrets."heitor/password".path;
         isNormalUser = true;
-        shell = pkgs.fish;
+        shell = pkgs.nushell;
       };
 
       root.hashedPasswordFile = mkDefault config.sops.secrets."heitor/password".path;
