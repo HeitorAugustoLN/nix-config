@@ -23,6 +23,7 @@ in
     ./nh.nix
     ./nix.nix
     ./nix-ld.nix
+    ./nushell.nix
     ./openssh.nix
     ./pipewire.nix
     ./security.nix
