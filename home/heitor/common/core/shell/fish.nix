@@ -1,8 +1,14 @@
 {
-  catppuccin.nushell.enable = true;
+  catppuccin.fish.enable = true;
 
-  programs.nushell = {
+  programs.fish = {
     enable = true;
-    settings.edit_mode = "vi";
+    preferAbbrs = true;
+    functions.fish_greeting = "";
+
+    interactiveShellInit = # fish
+      ''
+        fish_vi_key_bindings
+      '';
   };
 }
