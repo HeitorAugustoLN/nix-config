@@ -2,10 +2,11 @@
   programs.git = {
     enable = true;
 
-    extraConfig = {
+    settings = {
       color.ui = true;
       core.editor = "nvim";
       init.defaultBranch = "main";
+      user.name = "Heitor Augusto";
     };
 
     signing = {
@@ -24,7 +25,24 @@
           contents.user.email = githubEmail;
         }
       ];
+  };
 
-    userName = "Heitor Augusto";
+  programs.jujutsu = {
+    enable = true;
+
+    settings = {
+      user = {
+        name = "Heitor Augusto";
+        email = "44377258+HeitorAugustoLN@users.noreply.github.com";
+      };
+
+      ui.default-editor = "nvim";
+
+      signing = {
+        sign-all = true;
+        backend = "gpg";
+        key = "3EEC05B0024AF8A4";
+      };
+    };
   };
 }

@@ -11,5 +11,7 @@
     ./nix.nix
     ./starship.nix
     ./zoxide.nix
+    ./zsh.nix
+    ./nushell.nix
   ];
 }

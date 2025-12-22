@@ -2,7 +2,6 @@
   inputs,
   inputs',
   lib,
-  pkgs,
   self,
   self',
   ...
@@ -33,11 +32,13 @@ in
     ./systemd-boot.nix
     ./xdg.nix
     ./zram.nix
+    ./zsh.nix
+    ./nu.nix
   ];
 
   boot = {
     initrd.systemd.enable = true;
-    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_latest;
   };
 
   documentation = {

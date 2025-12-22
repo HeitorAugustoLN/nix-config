@@ -25,8 +25,38 @@ in
       wike
       resources
       gimp
+      mullvad-browser
+      proton-pass
+      tor-browser
       godot-mono
       libresprite
+      (
+        let
+          pname = "helium";
+          version = "0.7.6.1";
+
+          src = fetchurl {
+            url = "https://github.com/imputnet/helium-linux/releases/download/${version}/helium-${version}-x86_64.AppImage";
+            hash = "sha256-SUpXcyQXUjZR57pNabVR/cSrGOMKvgzW0PSCLdB8d+E=";
+          };
+
+          appimageContents = appimageTools.extractType2 { inherit pname src version; };
+        in
+        appimageTools.wrapType2 {
+          inherit pname src version;
+
+          extraInstallCommands = ''
+            install -Dm644 ${appimageContents}/usr/share/icons/hicolor/256x256/apps/helium.png \
+              $out/share/icons/hicolor/256x256/apps/helium.png
+
+            install -Dm644 ${appimageContents}/helium.desktop $out/share/applications/helium.desktop
+            substituteInPlace $out/share/applications/helium.desktop \
+              --replace-fail "Exec=AppRun" "Exec=helium"
+          '';
+
+          meta.mainProgram = "helium";
+        }
+      )
     ];
     stateVersion = "25.11";
   };
@@ -35,8 +65,8 @@ in
 
   qt = {
     enable = true;
-    platformTheme.name = "adwaita";
-    style.name = "adwaita-dark";
+    platformTheme.name = "kde";
+    style.name = "breeze";
   };
 
   wayland.desktopManager.cosmic = {

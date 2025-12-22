@@ -139,20 +139,19 @@ in
           withSystem value.system (
             { inputs', self', ... }:
             inputs.nixpkgs.lib.nixosSystem {
-              modules =
-                [
-                  ../hosts/common/core
-                  {
-                    networking = {
-                      hostName = mkDefault name;
-                      hostId = mkDefault (substring 0 8 (hashString "md5" name));
-                    };
+              modules = [
+                ../hosts/common/core
+                {
+                  networking = {
+                    hostName = mkDefault name;
+                    hostId = mkDefault (substring 0 8 (hashString "md5" name));
+                  };
 
-                    nixpkgs.hostPlatform = value.system;
-                  }
-                ]
-                ++ attrValues self.nixosModules
-                ++ value.modules;
+                  nixpkgs.hostPlatform = value.system;
+                }
+              ]
+              ++ attrValues self.nixosModules
+              ++ value.modules;
 
               specialArgs = {
                 inherit

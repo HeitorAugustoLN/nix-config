@@ -4,6 +4,7 @@
     ./brave.nix
     ./catppuccin.nix
     ./cosmic
+    ./firefox.nix
     ./flatpak.nix
     ./ghostty.nix
     ./mpv.nix

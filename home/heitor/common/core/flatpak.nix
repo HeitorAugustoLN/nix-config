@@ -10,10 +10,7 @@
       }
     ];
 
-    packages = [
-      "com.discordapp.Discord"
-      "com.stremio.Stremio"
-    ];
+    packages = [ "com.usebottles.bottles" ];
 
     uninstallUnmanaged = true;
     uninstallUnused = true;

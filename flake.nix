@@ -2,6 +2,14 @@
   description = "HeitorAugustoLN's personal Nix configuration flake";
 
   inputs = {
+    arkenfox-nix = {
+      url = "github:HeitorAugustoLN/arkenfox-nix/init";
+
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     catppuccin = {
       url = "github:catppuccin/nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +37,9 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
-    nixos-facter-modules.url = "github:nix-community/nixos-facter-modules/pull/97/head";
+    mesa-good.url = "github:nixos/nixpkgs?ref=599ddd2b79331c1e6153e1659bdaab65d62c4c82";
+
+    nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
 
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
@@ -59,13 +69,9 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nur = {
-      url = "github:nix-community/NUR";
-
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     sops-nix = {

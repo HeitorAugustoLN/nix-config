@@ -2,8 +2,11 @@
 {
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
-    matchBlocks."*".identityFile = "${config.home.homeDirectory}/.ssh/id-ed25519";
+    enableDefaultConfig = false;
+    matchBlocks."*" = {
+      addKeysToAgent = "yes";
+      identityFile = "${config.home.homeDirectory}/.ssh/id-ed25519";
+    };
   };
 
   services.ssh-agent.enable = true;

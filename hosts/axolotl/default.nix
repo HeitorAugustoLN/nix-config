@@ -25,7 +25,22 @@
   facter.reportPath = ./facter.json;
   facter.detected.dhcp.enable = false;
 
+  hardware.graphics.enable32Bit = true;
+
+  virtualisation.containers.enable = true;
+  virtualisation.podman.enable = true;
+
+  nixpkgs.config.permittedInsecurePackages = [ pkgs.libsForQt5.qtwebengine.name ];
+
+  # environment.variables.RUSTICL_ENABLE = "radeonsi";
+  # hardware.graphics.extraPackages = [ pkgs.mesa.opencl ];
+
   environment.systemPackages = [
+    pkgs.distrobox
+    pkgs.stremio
+    pkgs.gnomeExtensions.alphabetical-app-grid
+    pkgs.gnomeExtensions.appindicator
+    pkgs.kdePackages.kio-extras
     (pkgs.kdePackages.kdenlive.overrideAttrs (oldAttrs: {
       qtWrapperArgs = oldAttrs.qtWrapperArgs ++ [
         "--prefix PATH : ${
